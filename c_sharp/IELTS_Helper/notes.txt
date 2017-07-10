@@ -1,0 +1,5 @@
+﻿Nuget
+--------------------
+1. Install-Package CommonMark.NET
+2. http://system.data.sqlite.org/downloads/1.0.105.2/sqlite-netFx46-setup-bundle-x64-2015-1.0.105.2.exe
+3. Install-Package System.Data.SQLite -version 1.0.105.2
