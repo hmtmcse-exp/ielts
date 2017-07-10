@@ -2,6 +2,7 @@ package com.hmtmcse.html;
 
 
 import com.hmtmcse.common.AppExceptionHandler;
+import com.hmtmcse.common.Constant;
 import com.hmtmcse.common.Log;
 import com.hmtmcse.common.MyFileWriter;
 import com.hmtmcse.data.Analyze;
@@ -32,8 +33,8 @@ public class IELTSMentor {
     public static void main(String[] args) {
         try {
 
-            String webURL = "http://www.ielts-mentor.com/reading-sample/academic-reading/27-ielts-academic-reading-sample-2-visual-symbols-and-the-blind";
-            String topicName = "Visual.Symbols-and the Blind";
+            String webURL = "http://www.ielts-mentor.com/reading-sample/academic-reading/26-ielts-academic-reading-sample-1-population-viability-analysis";
+            String topicName = "Population Viability Analysis";
             String groupName = "READING";
             String uniqueName = topicName.replaceAll("[\\s*.-]", "_").toLowerCase();
             uniqueName = uniqueName.replaceAll("[^a-zA-Z0-9_]", "");
@@ -172,7 +173,7 @@ public class IELTSMentor {
 
             if (!translateWord.toString().equals("")){
                 MyFileWriter.appendToFile(translateWord.toString(),"store/feature_file.txt");
-                MyFileWriter.writeToFile(article.toString(),"store/html/" + uniqueName + ".html");
+                MyFileWriter.writeToFile(article.toString(), Constant.HTML_READ + uniqueName + ".html");
             }
 
             System.out.println("noteId: " + noteId);

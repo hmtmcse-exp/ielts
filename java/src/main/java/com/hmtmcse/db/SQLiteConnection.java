@@ -1,5 +1,7 @@
 package com.hmtmcse.db;
 
+import com.hmtmcse.common.Constant;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,7 +15,7 @@ public class SQLiteConnection {
     Connection connection = null;
     Statement statement = null;
     private String JDBC_DRIVER_PACKAGE = "org.sqlite.JDBC";
-    public String DATABASE_NAME_WITH_LOCATION = "store/word_book.db";
+    public String DATABASE_NAME_WITH_LOCATION = Constant.DATABASE;
     private String DATABASE_URL = "jdbc:sqlite:" + DATABASE_NAME_WITH_LOCATION;
 
     public SQLiteConnection() throws SQLiteExceptionHandler {
