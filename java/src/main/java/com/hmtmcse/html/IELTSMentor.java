@@ -32,8 +32,8 @@ public class IELTSMentor {
     public static void main(String[] args) {
         try {
 
-            String webURL = "http://www.ielts-mentor.com/reading-sample/academic-reading/27-ielts-academic-reading-sample-2-visual-symbols-and-the-blind";
-            String topicName = "Visual.Symbols-and the Blind";
+            String webURL = "http://www.ielts-mentor.com/reading-sample/academic-reading/35-ielts-academic-reading-sample-10-absenteeism-in-nursing";
+            String topicName = "ABSENTEEISM IN NURSING, A LONGITUDINAL STUDY";
             String groupName = "READING";
             String uniqueName = topicName.replaceAll("[\\s*.-]", "_").toLowerCase();
             uniqueName = uniqueName.replaceAll("[^a-zA-Z0-9_]", "");
