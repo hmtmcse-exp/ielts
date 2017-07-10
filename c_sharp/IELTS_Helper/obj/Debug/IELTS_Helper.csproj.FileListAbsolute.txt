@@ -29,7 +29,6 @@ C:\Users\hmtmc\Desktop\codes\c_sharp\desktop\IELTS_Helper\IELTS_Helper\bin\Debug
 C:\Users\hmtmc\Desktop\codes\c_sharp\desktop\IELTS_Helper\IELTS_Helper\bin\Debug\Resources\Database\word_book.db
 C:\Users\hmtmc\Desktop\codes\c_sharp\desktop\IELTS_Helper\IELTS_Helper\bin\Debug\Resources\Reading\HTML\1_visual_symbols_and_the_blind.html
 C:\Users\hmtmc\Desktop\codes\ielts\c_sharp\IELTS_Helper\bin\Debug\Resources\Database\empty.txt
-C:\Users\hmtmc\Desktop\codes\ielts\c_sharp\IELTS_Helper\bin\Debug\Resources\Reading\HTML\1_visual_symbols_and_the_blind.html
 C:\Users\hmtmc\Desktop\codes\ielts\c_sharp\IELTS_Helper\bin\Debug\Resources\Database\word_book.db
 C:\Users\hmtmc\Desktop\codes\ielts\c_sharp\IELTS_Helper\bin\Debug\Resources\Listening\HTML\Reading.md
 C:\Users\hmtmc\Desktop\codes\ielts\c_sharp\IELTS_Helper\bin\Debug\Resources\Listening\MD\Reading.md

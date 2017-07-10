@@ -140,9 +140,6 @@
     <Content Include="Resources\Database\empty.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Reading\HTML\1_visual_symbols_and_the_blind.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
