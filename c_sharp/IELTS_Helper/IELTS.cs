@@ -75,17 +75,18 @@ namespace IELTS_Helper
 
         private void introduction_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (introduction.SelectedTab.Name == "reading")
+            if (introduction.SelectedTab.Name == "reading" && !StaticDataHolder.isReadingTabLoaded)
             {
+                StaticDataHolder.isReadingTabLoaded = true;
                 NoteService noteService = new NoteService();
                 listBox1.DataSource = noteService.GetNotesByGroupName(AppConstant.READING);
                 listBox1.DisplayMember = "DisplayName";
                 listBox1.ValueMember = "Identifier";
 
             }
-            else if (introduction.SelectedTab.Name == "vocabulary")
+            else if (introduction.SelectedTab.Name == "vocabulary" && !StaticDataHolder.isVocabularyTabLoaded)
             {
-               
+                StaticDataHolder.isVocabularyTabLoaded = true;
                 vocabularyService.load(vocabularyListView);
 
             }
@@ -98,6 +99,9 @@ namespace IELTS_Helper
             int index = int.Parse(listBox1.SelectedIndex.ToString());
             string curItem = (listBox1.Items[index] as NoteModel).Identifier;
             readingWebview.Url = FileOperationService.getHtmlUrlByType(curItem);
+            readingWebview.IsWebBrowserContextMenuEnabled = false;
+            readingWebview.AllowWebBrowserDrop = false;
+
         }
 
         private void readingWebview_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
