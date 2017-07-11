@@ -1,5 +1,6 @@
 ﻿using IELTS_Helper.Database;
 using IELTS_Helper.Service;
+using IELTS_Helper.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -72,12 +73,10 @@ namespace IELTS_Helper
         {
             if (introduction.SelectedTab.Name == "reading")
             {
-
                 NoteService noteService = new NoteService();
                 listBox1.DataSource = noteService.GetNotesByGroupName(AppConstant.READING);
                 listBox1.DisplayMember = "DisplayName";
-                listBox1.ValueMember = "Id";
-                readingWebview.Url = new Uri(@"file://" + System.IO.Directory.GetCurrentDirectory() + @"\Resources\Reading\HTML\1_visual_symbols_and_the_blind.html");
+                listBox1.ValueMember = "Identifier";
 
             }
 
@@ -87,7 +86,9 @@ namespace IELTS_Helper
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int index = int.Parse(listBox1.SelectedIndex.ToString());
+            string curItem = (listBox1.Items[index] as NoteModel).Identifier;
+            readingWebview.Url = FileOperationService.getHtmlUrlByType(curItem);
         }
 
         private void readingWebview_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)

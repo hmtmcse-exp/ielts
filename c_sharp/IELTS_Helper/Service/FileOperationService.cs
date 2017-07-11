@@ -15,9 +15,10 @@ namespace IELTS_Helper.Service
             return File.ReadAllText(location);
         }
 
-        public static Uri getHtmlUrlByType(string type, string fileName)
+        public static Uri getHtmlUrlByType(string fileName)
         {
-            return new Uri(@"file://" + System.IO.Directory.GetCurrentDirectory() + @"\Resources\Reading\HTML\" + fileName + ".html");
+            string fileLocation = Directory.GetCurrentDirectory() + @"\Resources\Reading\HTML\" + fileName + ".html";
+            return new Uri(@"file://" + fileLocation);
         }
 
     }
