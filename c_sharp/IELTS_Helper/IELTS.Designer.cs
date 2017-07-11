@@ -42,6 +42,15 @@
             this.writing = new System.Windows.Forms.TabPage();
             this.listening = new System.Windows.Forms.TabPage();
             this.speaking = new System.Windows.Forms.TabPage();
+            this.vocabulary = new System.Windows.Forms.TabPage();
+            this.startLine = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.banglaMeaning = new System.Windows.Forms.Label();
+            this.englishWord = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -49,6 +58,8 @@
             this.reading.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.vocabulary.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // introduction
@@ -58,6 +69,7 @@
             this.introduction.Controls.Add(this.writing);
             this.introduction.Controls.Add(this.listening);
             this.introduction.Controls.Add(this.speaking);
+            this.introduction.Controls.Add(this.vocabulary);
             this.introduction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.introduction.Location = new System.Drawing.Point(0, 0);
             this.introduction.Name = "introduction";
@@ -202,6 +214,103 @@
             this.speaking.Text = "Speaking";
             this.speaking.UseVisualStyleBackColor = true;
             // 
+            // vocabulary
+            // 
+            this.vocabulary.Controls.Add(this.startLine);
+            this.vocabulary.Controls.Add(this.comboBox1);
+            this.vocabulary.Controls.Add(this.banglaMeaning);
+            this.vocabulary.Controls.Add(this.englishWord);
+            this.vocabulary.Controls.Add(this.button2);
+            this.vocabulary.Controls.Add(this.button3);
+            this.vocabulary.Controls.Add(this.groupBox5);
+            this.vocabulary.Location = new System.Drawing.Point(4, 22);
+            this.vocabulary.Name = "vocabulary";
+            this.vocabulary.Padding = new System.Windows.Forms.Padding(3);
+            this.vocabulary.Size = new System.Drawing.Size(1343, 569);
+            this.vocabulary.TabIndex = 5;
+            this.vocabulary.Text = "Vocabulary";
+            this.vocabulary.UseVisualStyleBackColor = true;
+            // 
+            // startLine
+            // 
+            this.startLine.Location = new System.Drawing.Point(480, 52);
+            this.startLine.Name = "startLine";
+            this.startLine.Size = new System.Drawing.Size(100, 20);
+            this.startLine.TabIndex = 13;
+            this.startLine.Text = "0";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox1.Location = new System.Drawing.Point(352, 53);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // banglaMeaning
+            // 
+            this.banglaMeaning.AutoSize = true;
+            this.banglaMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.banglaMeaning.Location = new System.Drawing.Point(529, 109);
+            this.banglaMeaning.Name = "banglaMeaning";
+            this.banglaMeaning.Size = new System.Drawing.Size(307, 46);
+            this.banglaMeaning.TabIndex = 11;
+            this.banglaMeaning.Text = "Bangla Meaning";
+            // 
+            // englishWord
+            // 
+            this.englishWord.AutoSize = true;
+            this.englishWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.englishWord.Location = new System.Drawing.Point(99, 109);
+            this.englishWord.Name = "englishWord";
+            this.englishWord.Size = new System.Drawing.Size(258, 46);
+            this.englishWord.TabIndex = 10;
+            this.englishWord.Text = "English Word";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(229, 52);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Load";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(102, 52);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Start Talking";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.listView1);
+            this.groupBox5.Location = new System.Drawing.Point(66, 169);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(1211, 347);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Word Notes";
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(6, 19);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(715, 307);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // IELTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -217,6 +326,9 @@
             this.reading.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.vocabulary.ResumeLayout(false);
+            this.vocabulary.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -237,5 +349,14 @@
         private System.Windows.Forms.WebBrowser readingWebview;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TabPage vocabulary;
+        private System.Windows.Forms.TextBox startLine;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label banglaMeaning;
+        private System.Windows.Forms.Label englishWord;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.ListView listView1;
     }
 }
