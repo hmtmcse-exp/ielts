@@ -74,10 +74,14 @@ public class Steps {
         String result = findElementBy(By.xpath("//*[@id=\"result_box\"]/span"));
 
         WebElement webElement = findElementByRObject(By.className("cd-exp-ar"));
-        if (webElement != null){
-            Actions actions = new Actions(driver);
-            actions.moveToElement(webElement).perform();
-            webElement.click();
+        try{
+            if (webElement != null){
+                Actions actions = new Actions(driver);
+                actions.moveToElement(webElement).perform();
+                webElement.click();
+            }
+        }catch (Exception e){
+
         }
 
         String pFp = findElementBy(By.className("gt-cd-pos"));
