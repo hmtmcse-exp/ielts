@@ -105,6 +105,7 @@ public class Steps {
                     + "en_ps='" + pFp +"',"
                     + "status=" + 2 +"";
             sqLiteSQLQueryHelper.update("word",pair,"where en='" + word.trim() + "'");
+            sqLiteSQLQueryHelper.closeConnection();
         } catch (SQLiteExceptionHandler sqLiteExceptionHandler) {
             Log.error(sqLiteExceptionHandler.getMessage());
         }
