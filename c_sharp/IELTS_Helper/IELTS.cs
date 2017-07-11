@@ -16,6 +16,10 @@ namespace IELTS_Helper
 {
     public partial class IELTS : Form
     {
+
+        Boolean isStartTalking = false;
+        VocabularyService vocabularyService = new VocabularyService();
+
         public IELTS()
         {
             InitializeComponent();
@@ -81,7 +85,7 @@ namespace IELTS_Helper
             }
             else if (introduction.SelectedTab.Name == "vocabulary")
             {
-                VocabularyService vocabularyService = new VocabularyService();
+               
                 vocabularyService.load(vocabularyListView);
 
             }
@@ -103,11 +107,28 @@ namespace IELTS_Helper
 
         private void startTalking_Click(object sender, EventArgs e)
         {
-            VocabularyService vocabularyService = new VocabularyService();
+            
             PlayWordSettings playWordSettings = new PlayWordSettings();
             playWordSettings.Form = this;
             playWordSettings.BackgroundToUITask = true;
             playWordSettings.EnglishWordLabel = englishWord;
+            playWordSettings.BanglaWordLabel = banglaMeaning;
+            playWordSettings.ListView = vocabularyListView;
+            playWordSettings.StartIndex = VocabularyService.lastReadIndex;
+            if (isStartTalking)
+            {
+                isStartTalking = false;
+                startTalking.Text = "Start Talking";
+                playWordSettings.WillRun = false;
+                comboBox1.Enabled = true;
+            }
+            else
+            {
+                isStartTalking = true;
+                startTalking.Text = "Stop Talking";
+                comboBox1.Enabled = false;
+                playWordSettings.WillRun = true;
+            }
             vocabularyService.PlayWords(VocabularyService.words, playWordSettings);
         }
     }

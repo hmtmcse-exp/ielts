@@ -18,6 +18,7 @@ namespace IELTS_Helper.Service
         public static List<ListViewItem> listViewItemList = new List<ListViewItem>();
         SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         Thread thread = null;
+        public static int lastReadIndex = 0;
 
         public void load(ListView listView)
         {
@@ -53,34 +54,63 @@ namespace IELTS_Helper.Service
             {
                 playWordSettings.SynonymLabel.Text = wordModel.Synonym;
             }
+
+            if (playWordSettings.ListView != null && playWordSettings.ExtraInt1 != -1)
+            {
+                playWordSettings.ListView.Items[playWordSettings.ExtraInt1].Selected = true;
+                playWordSettings.ListView.Items[playWordSettings.ExtraInt1].Focused = true;
+                playWordSettings.ListView.TopItem = playWordSettings.ListView.Items[playWordSettings.ExtraInt1];
+                playWordSettings.ListView.Select();
+            }
         }
 
         public void PlayWordLoopBG(List<WordModel> wordList, PlayWordSettings playWordSettings)
         {
             speechSynthesizer.SetOutputToDefaultAudioDevice();
-            foreach(WordModel wordModel in wordList)
+            for( int i = playWordSettings.StartIndex; i < wordList.Count(); i++)
             {
-                if(wordModel.EnglishWord != null)
+                WordModel wordModel = wordList[i];
+                VocabularyService.lastReadIndex = i;
+                if (wordModel.EnglishWord != null)
                 {
                     if (playWordSettings.BackgroundToUITask && playWordSettings.Form != null)
                     {
                         playWordSettings.Form.Invoke
                             ((MethodInvoker) delegate
                             {
+                                playWordSettings.ExtraInt1 = i;
                                 UpdateUI(wordModel, playWordSettings);
                             }
                             );
                     }
                     speechSynthesizer.Speak(wordModel.EnglishWord);
+                    VocabularyService.lastReadIndex++;
                     Thread.Sleep(1000 * playWordSettings.SpeechDelay);
                 }
+                else
+                {
+                    VocabularyService.lastReadIndex++;
+                }
+                
             }
         }
 
         public void PlayWords(List<WordModel> wordList, PlayWordSettings playWordSettings)
         {
+            if(thread != null)
+            {
+                thread.Abort();
+            }
             thread = new Thread(() => PlayWordLoopBG(wordList, playWordSettings));
-            thread.Start();
+            if (playWordSettings.WillRun)
+            {
+                thread.Start();
+            }
+            else
+            {
+                thread.Abort();
+            }
+            
 
         }
 

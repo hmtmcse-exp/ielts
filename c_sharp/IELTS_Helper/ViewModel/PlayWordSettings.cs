@@ -18,5 +18,6 @@ namespace IELTS_Helper.ViewModel
         public Label SynonymLabel { get; set; } = null;
         public Form Form { get; set; } = null;
         public bool BackgroundToUITask { get; set; } = false;
+        public int ExtraInt1 { get; set; } = -1;
     }
 }
