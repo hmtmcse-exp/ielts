@@ -79,7 +79,12 @@ namespace IELTS_Helper
                 listBox1.ValueMember = "Identifier";
 
             }
+            else if (introduction.SelectedTab.Name == "vocabulary")
+            {
+                VocabularyService vocabularyService = new VocabularyService();
+                vocabularyService.load(vocabularyListView);
 
+            }
             Console.WriteLine(introduction.SelectedTab.Name);
 
         }
