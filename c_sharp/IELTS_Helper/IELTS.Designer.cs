@@ -48,7 +48,7 @@
             this.banglaMeaning = new System.Windows.Forms.Label();
             this.englishWord = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.startTalking = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.vocabularyListView = new System.Windows.Forms.ListView();
             this.introduction.SuspendLayout();
@@ -221,7 +221,7 @@
             this.vocabulary.Controls.Add(this.banglaMeaning);
             this.vocabulary.Controls.Add(this.englishWord);
             this.vocabulary.Controls.Add(this.button2);
-            this.vocabulary.Controls.Add(this.button3);
+            this.vocabulary.Controls.Add(this.startTalking);
             this.vocabulary.Controls.Add(this.groupBox5);
             this.vocabulary.Location = new System.Drawing.Point(4, 22);
             this.vocabulary.Name = "vocabulary";
@@ -284,14 +284,15 @@
             this.button2.Text = "Load";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // startTalking
             // 
-            this.button3.Location = new System.Drawing.Point(102, 52);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Start Talking";
-            this.button3.UseVisualStyleBackColor = true;
+            this.startTalking.Location = new System.Drawing.Point(102, 52);
+            this.startTalking.Name = "startTalking";
+            this.startTalking.Size = new System.Drawing.Size(75, 23);
+            this.startTalking.TabIndex = 8;
+            this.startTalking.Text = "Start Talking";
+            this.startTalking.UseVisualStyleBackColor = true;
+            this.startTalking.Click += new System.EventHandler(this.startTalking_Click);
             // 
             // groupBox5
             // 
@@ -355,7 +356,7 @@
         private System.Windows.Forms.Label banglaMeaning;
         private System.Windows.Forms.Label englishWord;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button startTalking;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ListView vocabularyListView;
     }

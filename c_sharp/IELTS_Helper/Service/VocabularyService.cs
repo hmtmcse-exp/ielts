@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Linq;
+using System.Speech.Synthesis;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,6 +16,8 @@ namespace IELTS_Helper.Service
     {
         public static List<WordModel> words = new List<WordModel>();
         public static List<ListViewItem> listViewItemList = new List<ListViewItem>();
+        SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
+        Thread thread = null;
 
         public void load(ListView listView)
         {
@@ -32,7 +36,53 @@ namespace IELTS_Helper.Service
             }
         }
 
-        
+
+        public void UpdateUI(WordModel wordModel, PlayWordSettings playWordSettings)
+        {
+            if(playWordSettings.BanglaWordLabel != null)
+            {
+                playWordSettings.BanglaWordLabel.Text = wordModel.BanglaMeaning;
+            }
+
+            if (playWordSettings.EnglishWordLabel != null)
+            {
+                playWordSettings.EnglishWordLabel.Text = wordModel.EnglishWord;
+            }
+
+            if (playWordSettings.SynonymLabel != null)
+            {
+                playWordSettings.SynonymLabel.Text = wordModel.Synonym;
+            }
+        }
+
+        public void PlayWordLoopBG(List<WordModel> wordList, PlayWordSettings playWordSettings)
+        {
+            speechSynthesizer.SetOutputToDefaultAudioDevice();
+            foreach(WordModel wordModel in wordList)
+            {
+                if(wordModel.EnglishWord != null)
+                {
+                    if (playWordSettings.BackgroundToUITask && playWordSettings.Form != null)
+                    {
+                        playWordSettings.Form.Invoke
+                            ((MethodInvoker) delegate
+                            {
+                                UpdateUI(wordModel, playWordSettings);
+                            }
+                            );
+                    }
+                    speechSynthesizer.Speak(wordModel.EnglishWord);
+                    Thread.Sleep(1000 * playWordSettings.SpeechDelay);
+                }
+            }
+        }
+
+        public void PlayWords(List<WordModel> wordList, PlayWordSettings playWordSettings)
+        {
+            thread = new Thread(() => PlayWordLoopBG(wordList, playWordSettings));
+            thread.Start();
+
+        }
 
         private void loadFromDatabase(Boolean isReload)
         {

@@ -51,6 +51,7 @@
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.105.2\lib\net451\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Speech" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -77,6 +78,7 @@
     <Compile Include="Service\NoteService.cs" />
     <Compile Include="Service\VocabularyService.cs" />
     <Compile Include="ViewModel\NoteModel.cs" />
+    <Compile Include="ViewModel\PlayWordSettings.cs" />
     <Compile Include="ViewModel\WordModel.cs" />
     <EmbeddedResource Include="IELTS.resx">
       <DependentUpon>IELTS.cs</DependentUpon>

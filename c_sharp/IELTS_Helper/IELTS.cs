@@ -100,5 +100,15 @@ namespace IELTS_Helper
         {
 
         }
+
+        private void startTalking_Click(object sender, EventArgs e)
+        {
+            VocabularyService vocabularyService = new VocabularyService();
+            PlayWordSettings playWordSettings = new PlayWordSettings();
+            playWordSettings.Form = this;
+            playWordSettings.BackgroundToUITask = true;
+            playWordSettings.EnglishWordLabel = englishWord;
+            vocabularyService.PlayWords(VocabularyService.words, playWordSettings);
+        }
     }
 }
