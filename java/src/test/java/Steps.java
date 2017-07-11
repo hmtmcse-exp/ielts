@@ -25,7 +25,7 @@ public class Steps {
 
 
     WebDriver driver;
-    Boolean runTest = true;
+    Boolean runTest = false;
 
     @Before
     public void setup() {
@@ -37,7 +37,7 @@ public class Steps {
 
     @Then("^check the ([^\"]*) word$")
     public void check_the_word(String word) {
-        if (!WordNoteHelper.isTranslated(word.trim())) {
+        if (WordNoteHelper.willTranslated(word.trim())) {
             runTest = true;
         }
     }

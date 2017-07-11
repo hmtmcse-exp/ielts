@@ -11,7 +11,7 @@ import java.sql.SQLException;
  */
 public class WordNoteHelper {
 
-    public static Boolean isTranslated(String word){
+    public static Boolean willTranslated(String word){
         try {
             SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
             ResultSet resultSet = sqLiteSQLQueryHelper.select("word", "id", "where en='" + word + "' and status = 1");
