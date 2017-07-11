@@ -4,6 +4,7 @@ Feature: Testing Google Translate
 
 
   Scenario Outline:
+    Given check the <word> word
     Given open the url
     When select from english language
     Then select to bangla language
