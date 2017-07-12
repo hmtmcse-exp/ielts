@@ -13,8 +13,8 @@ namespace IELTS_Helper.ViewModel
         public int StartIndex { get; set; } = 0;
         public bool WillRun { get; set; } = true;
         public ListView ListView { get; set; } = null;
-        public Label EnglishWordLabel { get; set; } = null;
-        public Label BanglaWordLabel { get; set; } = null;
+        public TextBox EnglishWordLabel { get; set; } = null;
+        public TextBox BanglaWordLabel { get; set; } = null;
         public Label SynonymLabel { get; set; } = null;
         public Form Form { get; set; } = null;
         public bool BackgroundToUITask { get; set; } = false;

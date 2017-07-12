@@ -184,5 +184,10 @@ namespace IELTS_Helper
                 vocabularyService.SpeakWord(tempWordModel.EnglishWord);
             }
         }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

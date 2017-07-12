@@ -75,7 +75,7 @@ namespace IELTS_Helper.Service
 
         public void SpeakWord(String word)
         {
-            speechSynthesizer.Speak(word);
+            speechSynthesizer.SpeakAsync(word);
         }
 
         public void PlayWordLoopBG(List<WordModel> wordList, PlayWordSettings playWordSettings)
