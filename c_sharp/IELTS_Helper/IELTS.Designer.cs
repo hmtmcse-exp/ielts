@@ -51,6 +51,13 @@
             this.startTalking = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.vocabularyListView = new System.Windows.Forms.ListView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,8 +65,14 @@
             this.reading.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.speaking.SuspendLayout();
             this.vocabulary.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // introduction
@@ -206,6 +219,7 @@
             // 
             // speaking
             // 
+            this.speaking.Controls.Add(this.tableLayoutPanel1);
             this.speaking.Location = new System.Drawing.Point(4, 22);
             this.speaking.Name = "speaking";
             this.speaking.Padding = new System.Windows.Forms.Padding(3);
@@ -216,13 +230,7 @@
             // 
             // vocabulary
             // 
-            this.vocabulary.Controls.Add(this.startLine);
-            this.vocabulary.Controls.Add(this.comboBox1);
-            this.vocabulary.Controls.Add(this.banglaMeaning);
-            this.vocabulary.Controls.Add(this.englishWord);
-            this.vocabulary.Controls.Add(this.button2);
-            this.vocabulary.Controls.Add(this.startTalking);
-            this.vocabulary.Controls.Add(this.groupBox5);
+            this.vocabulary.Controls.Add(this.tableLayoutPanel2);
             this.vocabulary.Location = new System.Drawing.Point(4, 22);
             this.vocabulary.Name = "vocabulary";
             this.vocabulary.Padding = new System.Windows.Forms.Padding(3);
@@ -233,7 +241,7 @@
             // 
             // startLine
             // 
-            this.startLine.Location = new System.Drawing.Point(480, 52);
+            this.startLine.Location = new System.Drawing.Point(130, 139);
             this.startLine.Name = "startLine";
             this.startLine.Size = new System.Drawing.Size(100, 20);
             this.startLine.TabIndex = 13;
@@ -250,7 +258,7 @@
             "3",
             "4",
             "5"});
-            this.comboBox1.Location = new System.Drawing.Point(352, 53);
+            this.comboBox1.Location = new System.Drawing.Point(143, 40);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
@@ -259,7 +267,7 @@
             // 
             this.banglaMeaning.AutoSize = true;
             this.banglaMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.banglaMeaning.Location = new System.Drawing.Point(529, 109);
+            this.banglaMeaning.Location = new System.Drawing.Point(6, 128);
             this.banglaMeaning.Name = "banglaMeaning";
             this.banglaMeaning.Size = new System.Drawing.Size(307, 46);
             this.banglaMeaning.TabIndex = 11;
@@ -269,7 +277,7 @@
             // 
             this.englishWord.AutoSize = true;
             this.englishWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.englishWord.Location = new System.Drawing.Point(99, 109);
+            this.englishWord.Location = new System.Drawing.Point(4, 289);
             this.englishWord.Name = "englishWord";
             this.englishWord.Size = new System.Drawing.Size(258, 46);
             this.englishWord.TabIndex = 10;
@@ -277,7 +285,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(229, 52);
+            this.button2.Location = new System.Drawing.Point(130, 89);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -286,7 +294,7 @@
             // 
             // startTalking
             // 
-            this.startTalking.Location = new System.Drawing.Point(102, 52);
+            this.startTalking.Location = new System.Drawing.Point(16, 40);
             this.startTalking.Name = "startTalking";
             this.startTalking.Size = new System.Drawing.Size(75, 23);
             this.startTalking.TabIndex = 8;
@@ -297,20 +305,113 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.vocabularyListView);
-            this.groupBox5.Location = new System.Drawing.Point(66, 169);
+            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox5.Location = new System.Drawing.Point(3, 179);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1211, 347);
+            this.groupBox5.Size = new System.Drawing.Size(1014, 375);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Word Notes";
             // 
             // vocabularyListView
             // 
-            this.vocabularyListView.Location = new System.Drawing.Point(6, 19);
+            this.vocabularyListView.Location = new System.Drawing.Point(16, 19);
             this.vocabularyListView.Name = "vocabularyListView";
             this.vocabularyListView.Size = new System.Drawing.Size(715, 307);
             this.vocabularyListView.TabIndex = 0;
             this.vocabularyListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.1279F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 82.8721F));
+            this.tableLayoutPanel1.Controls.Add(this.groupBox6, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox7, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1337, 563);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox6.Location = new System.Drawing.Point(3, 3);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(223, 557);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "groupBox6";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox7.Location = new System.Drawing.Point(232, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(1102, 557);
+            this.groupBox7.TabIndex = 1;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "groupBox7";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 1026F));
+            this.tableLayoutPanel2.Controls.Add(this.groupBox8, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.91954F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1337, 563);
+            this.tableLayoutPanel2.TabIndex = 14;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.englishWord);
+            this.groupBox8.Controls.Add(this.banglaMeaning);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox8.Location = new System.Drawing.Point(3, 3);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(305, 557);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "groupBox8";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox9, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(314, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.77738F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.22262F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1020, 557);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.startTalking);
+            this.groupBox9.Controls.Add(this.startLine);
+            this.groupBox9.Controls.Add(this.button2);
+            this.groupBox9.Controls.Add(this.comboBox1);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1014, 170);
+            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "groupBox9";
             // 
             // IELTS
             // 
@@ -327,9 +428,16 @@
             this.reading.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.speaking.ResumeLayout(false);
             this.vocabulary.ResumeLayout(false);
-            this.vocabulary.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -359,5 +467,12 @@
         private System.Windows.Forms.Button startTalking;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ListView vocabularyListView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
