@@ -19,6 +19,7 @@ namespace IELTS_Helper
 
         Boolean isStartTalking = false;
         VocabularyService vocabularyService = new VocabularyService();
+        private WordModel tempWordModel = null;
 
         public IELTS()
         {
@@ -134,6 +135,54 @@ namespace IELTS_Helper
                 playWordSettings.WillRun = true;
             }
             vocabularyService.PlayWords(VocabularyService.words, playWordSettings);
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void searchVocabulary_TextChanged(object sender, EventArgs e)
+        {
+            ListViewItem searchItem = vocabularyListView.FindItemWithText(searchVocabulary.Text, true, 0, true);
+           if(searchItem != null)
+            {
+                vocabularyListView.TopItem = searchItem;
+            }
+        }
+
+        private void vocabularyListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void vocabularyListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            PlayWordSettings playWordSettings = new PlayWordSettings();
+            playWordSettings.EnglishWordLabel = englishWord;
+            playWordSettings.BanglaWordLabel = banglaMeaning;
+            tempWordModel = VocabularyService.words[e.ItemIndex];
+            vocabularyService.UpdateUI(tempWordModel, playWordSettings);
+        }
+
+        private void vocabularyListView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tempWordModel != null)
+                {
+                    vocabularyService.SpeakWord(tempWordModel.EnglishWord);
+                }
+                
+            }
+        }
+
+        private void vocabularyListView_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (tempWordModel != null)
+            {
+                vocabularyService.SpeakWord(tempWordModel.EnglishWord);
+            }
         }
     }
 }

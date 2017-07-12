@@ -20,21 +20,30 @@ namespace IELTS_Helper.Service
         Thread thread = null;
         public static int lastReadIndex = 0;
 
+        public VocabularyService()
+        {
+            speechSynthesizer.SetOutputToDefaultAudioDevice();
+        }
+
         public void load(ListView listView)
         {
             loadFromDatabase(false);
             listView.View = View.Details;
             listView.GridLines = true;
             listView.FullRowSelect = true;
-            listView.Columns.Add("SL", 100);
+            listView.Columns.Add("SL");
             listView.Columns.Add("English Word", 100);
             listView.Columns.Add("Bangla Meaning", 100);
             listView.Columns.Add("Parts of Speech", 100);
-            listView.Columns.Add("Synonym", 100);
-            foreach(ListViewItem listViewItem in listViewItemList)
+                          
+
+            foreach (ListViewItem listViewItem in listViewItemList)
             {
                 listView.Items.Add(listViewItem);
             }
+
+            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
 
@@ -64,9 +73,13 @@ namespace IELTS_Helper.Service
             }
         }
 
+        public void SpeakWord(String word)
+        {
+            speechSynthesizer.Speak(word);
+        }
+
         public void PlayWordLoopBG(List<WordModel> wordList, PlayWordSettings playWordSettings)
         {
-            speechSynthesizer.SetOutputToDefaultAudioDevice();
             for( int i = playWordSettings.StartIndex; i < wordList.Count(); i++)
             {
                 WordModel wordModel = wordList[i];
@@ -134,7 +147,7 @@ namespace IELTS_Helper.Service
                         wordModel.EnglishWord = listViewItemArray[1] = reader["en"].ToString();
                         wordModel.BanglaMeaning = listViewItemArray[2] = reader["bd"].ToString();
                         wordModel.PartsOfSpeech = listViewItemArray[3] = reader["en_ps"].ToString();
-                        wordModel.Synonym = listViewItemArray[4] = reader["en_synonym"].ToString();                        
+                        wordModel.Synonym =  reader["en_synonym"].ToString();
                         words.Add(wordModel);
                         listViewItemArray[0] = numberOfWord + "";
                         listViewItemList.Add(new ListViewItem(listViewItemArray));
