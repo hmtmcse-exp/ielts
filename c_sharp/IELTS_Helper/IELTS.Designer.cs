@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.introduction = new System.Windows.Forms.TabControl();
             this.intro = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -49,22 +48,21 @@
             this.vocabulary = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.banglaMeaning = new System.Windows.Forms.TextBox();
             this.englishWord = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.startLine = new System.Windows.Forms.TextBox();
-            this.startTalking = new System.Windows.Forms.Button();
-            this.searchVocabulary = new System.Windows.Forms.TextBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.banglaMeaning = new System.Windows.Forms.TextBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.vocabularyListView = new System.Windows.Forms.ListView();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.searchVocabulary = new System.Windows.Forms.TextBox();
+            this.startTalking = new System.Windows.Forms.Button();
+            this.startLine = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,9 +78,9 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // introduction
@@ -312,12 +310,6 @@
             this.groupBox8.Text = "Word Details";
             this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
-            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -346,6 +338,18 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "English Word";
             // 
+            // englishWord
+            // 
+            this.englishWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.englishWord.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.englishWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.englishWord.Location = new System.Drawing.Point(3, 16);
+            this.englishWord.Multiline = true;
+            this.englishWord.Name = "englishWord";
+            this.englishWord.ReadOnly = true;
+            this.englishWord.Size = new System.Drawing.Size(243, 154);
+            this.englishWord.TabIndex = 0;
+            // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.banglaMeaning);
@@ -356,16 +360,6 @@
             this.groupBox11.TabIndex = 1;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Bangla Word";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox12.Location = new System.Drawing.Point(3, 361);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(249, 174);
-            this.groupBox12.TabIndex = 2;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Synonym";
             // 
             // banglaMeaning
             // 
@@ -379,83 +373,30 @@
             this.banglaMeaning.Size = new System.Drawing.Size(243, 154);
             this.banglaMeaning.TabIndex = 12;
             // 
-            // englishWord
+            // groupBox12
             // 
-            this.englishWord.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.englishWord.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.englishWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.englishWord.Location = new System.Drawing.Point(3, 16);
-            this.englishWord.Multiline = true;
-            this.englishWord.Name = "englishWord";
-            this.englishWord.ReadOnly = true;
-            this.englishWord.Size = new System.Drawing.Size(243, 154);
-            this.englishWord.TabIndex = 0;
+            this.groupBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox12.Location = new System.Drawing.Point(3, 361);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(249, 174);
+            this.groupBox12.TabIndex = 2;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Synonym";
             // 
-            // groupBox9
+            // tableLayoutPanel3
             // 
-            this.groupBox9.Controls.Add(this.searchVocabulary);
-            this.groupBox9.Controls.Add(this.startTalking);
-            this.groupBox9.Controls.Add(this.startLine);
-            this.groupBox9.Controls.Add(this.button2);
-            this.groupBox9.Controls.Add(this.comboBox1);
-            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox9.Location = new System.Drawing.Point(3, 3);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(1058, 94);
-            this.groupBox9.TabIndex = 8;
-            this.groupBox9.TabStop = false;
-            this.groupBox9.Text = "Action Panel";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.comboBox1.Location = new System.Drawing.Point(84, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 12;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(211, 21);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Load";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // startLine
-            // 
-            this.startLine.Location = new System.Drawing.Point(292, 24);
-            this.startLine.Name = "startLine";
-            this.startLine.Size = new System.Drawing.Size(100, 20);
-            this.startLine.TabIndex = 13;
-            this.startLine.Text = "0";
-            // 
-            // startTalking
-            // 
-            this.startTalking.Location = new System.Drawing.Point(6, 19);
-            this.startTalking.Name = "startTalking";
-            this.startTalking.Size = new System.Drawing.Size(75, 23);
-            this.startTalking.TabIndex = 8;
-            this.startTalking.Text = "Start Talking";
-            this.startTalking.UseVisualStyleBackColor = true;
-            this.startTalking.Click += new System.EventHandler(this.startTalking_Click);
-            // 
-            // searchVocabulary
-            // 
-            this.searchVocabulary.Location = new System.Drawing.Point(398, 24);
-            this.searchVocabulary.Name = "searchVocabulary";
-            this.searchVocabulary.Size = new System.Drawing.Size(100, 20);
-            this.searchVocabulary.TabIndex = 14;
-            this.searchVocabulary.TextChanged += new System.EventHandler(this.searchVocabulary_TextChanged);
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.groupBox5, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.groupBox9, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(270, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1064, 557);
+            this.tableLayoutPanel3.TabIndex = 1;
             // 
             // groupBox5
             // 
@@ -481,20 +422,71 @@
             this.vocabularyListView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.vocabularyListView_KeyDown);
             this.vocabularyListView.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.vocabularyListView_MouseDoubleClick);
             // 
-            // tableLayoutPanel3
+            // groupBox9
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.groupBox5, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.groupBox9, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(270, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1064, 557);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.groupBox9.Controls.Add(this.searchVocabulary);
+            this.groupBox9.Controls.Add(this.startTalking);
+            this.groupBox9.Controls.Add(this.startLine);
+            this.groupBox9.Controls.Add(this.button2);
+            this.groupBox9.Controls.Add(this.comboBox1);
+            this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox9.Location = new System.Drawing.Point(3, 3);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(1058, 94);
+            this.groupBox9.TabIndex = 8;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Action Panel";
+            // 
+            // searchVocabulary
+            // 
+            this.searchVocabulary.Location = new System.Drawing.Point(398, 24);
+            this.searchVocabulary.Name = "searchVocabulary";
+            this.searchVocabulary.Size = new System.Drawing.Size(100, 20);
+            this.searchVocabulary.TabIndex = 14;
+            this.searchVocabulary.TextChanged += new System.EventHandler(this.searchVocabulary_TextChanged);
+            // 
+            // startTalking
+            // 
+            this.startTalking.Location = new System.Drawing.Point(6, 19);
+            this.startTalking.Name = "startTalking";
+            this.startTalking.Size = new System.Drawing.Size(75, 23);
+            this.startTalking.TabIndex = 8;
+            this.startTalking.Text = "Start Talking";
+            this.startTalking.UseVisualStyleBackColor = true;
+            this.startTalking.Click += new System.EventHandler(this.startTalking_Click);
+            // 
+            // startLine
+            // 
+            this.startLine.Location = new System.Drawing.Point(292, 24);
+            this.startLine.Name = "startLine";
+            this.startLine.Size = new System.Drawing.Size(100, 20);
+            this.startLine.TabIndex = 13;
+            this.startLine.Text = "0";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(211, 21);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Load";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comboBox1.Location = new System.Drawing.Point(84, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 12;
             // 
             // IELTS
             // 
@@ -523,10 +515,10 @@
             this.groupBox10.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -553,7 +545,6 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox11;
