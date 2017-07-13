@@ -16,7 +16,7 @@ namespace IELTS_Helper.Service
     {
         public static List<WordModel> words = new List<WordModel>();
         public static List<ListViewItem> listViewItemList = new List<ListViewItem>();
-        SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
+        public SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         Thread thread = null;
         public static int lastReadIndex = 0;
 

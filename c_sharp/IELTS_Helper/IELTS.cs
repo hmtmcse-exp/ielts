@@ -36,10 +36,9 @@ namespace IELTS_Helper
             var result = CommonMark.CommonMarkConverter.Convert("**Hello world!**");
             introWeb.DocumentText = result;
 
-
-
-
-            
+            VocabularyService v = new VocabularyService();
+            v.speechSynthesizer.Rate = -2;
+            v.SpeakWord("To make political decisions about the extent and type of forestry in a region it is important to understand the consequences of those decisions. One tool for assessing the impact of forestry on the ecosystem is population viability analysis (PVA). This is a tool for predicting the probability that a species will become extinct in a particular region over a specific period. It has been successfully used in the United States to provide input into resource exploitation decisions and assist wildlife managers and there is now enormous potential for using population viability to assist wildlife management in Australia's forests. A species becomes extinct when the last individual dies. This observation is a useful starting point for any discussion of extinction as it highlights the role of luck and chance in the extinction process. To make a prediction about extinction we need to understand the processes that can contribute to it and these fall into four broad categories which are discussed below.");            
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
