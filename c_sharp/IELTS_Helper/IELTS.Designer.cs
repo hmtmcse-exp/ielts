@@ -63,6 +63,8 @@
             this.startLine = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ReadContents = new System.Windows.Forms.Button();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -187,6 +189,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.ReadContents);
             this.groupBox4.Controls.Add(this.listBox1);
             this.groupBox4.Location = new System.Drawing.Point(8, 7);
             this.groupBox4.Name = "groupBox4";
@@ -201,7 +204,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(3, 21);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(186, 524);
+            this.listBox1.Size = new System.Drawing.Size(186, 407);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -488,6 +491,16 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
             // 
+            // ReadContents
+            // 
+            this.ReadContents.Location = new System.Drawing.Point(42, 468);
+            this.ReadContents.Name = "ReadContents";
+            this.ReadContents.Size = new System.Drawing.Size(95, 23);
+            this.ReadContents.TabIndex = 1;
+            this.ReadContents.Text = "Read Contens";
+            this.ReadContents.UseVisualStyleBackColor = true;
+            this.ReadContents.Click += new System.EventHandler(this.ReadContents_Click);
+            // 
             // IELTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -560,5 +573,7 @@
         private System.Windows.Forms.TextBox startLine;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button ReadContents;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

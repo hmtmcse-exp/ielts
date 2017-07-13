@@ -188,5 +188,14 @@ namespace IELTS_Helper
         {
 
         }
+
+        private void ReadContents_Click(object sender, EventArgs e)
+        {
+
+            vocabularyService.speechSynthesizer.SpeakAsyncCancelAll();
+            vocabularyService.speechSynthesizer.Rate = -4;
+            vocabularyService.SpeakWord(readingWebview.Document.Body.InnerText);
+            
+        }
     }
 }
