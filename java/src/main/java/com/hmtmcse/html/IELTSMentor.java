@@ -119,7 +119,7 @@ public class IELTSMentor {
                 Log.error("Note Id Not found.");
             }else{
                 for(Tokens tokens : result.getTokens()){
-                    if (tokens.getType() != null && tokens.getType().equals("<ALPHANUM>")){
+                    if (tokens.getType() != null && tokens.getType().equals("<ALPHANUM>") && !tokens.getToken().matches(".*[0-9].*")){
                         String word = tokens.getToken();
                         if (word.length() > 1){
                             String wordId = "";
