@@ -10,6 +10,7 @@ import com.hmtmcse.data.Tokens;
 import com.hmtmcse.db.SQLiteExceptionHandler;
 import com.hmtmcse.db.SQLiteSQLQueryHelper;
 import com.hmtmcse.es.ESManager;
+import com.hmtmcse.text.TextFileReaderWriter;
 import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.jsoup.Jsoup;
@@ -171,14 +172,11 @@ public class IELTSMentor {
             }
 
             if (!translateWord.toString().equals("")){
-                MyFileWriter.appendToFile(translateWord.toString(),"store/feature_file.txt");
-                MyFileWriter.writeToFile(article.toString(),"store/html/" + uniqueName + ".html");
+                TextFileReaderWriter.appendToFile(translateWord.toString(),"store/feature_file.txt");
+                String content = TextFileReaderWriter.removeSpecialCharacter(article.toString());
+                TextFileReaderWriter.writeToFile(content,"store/html/" + uniqueName + ".html");
             }
-
             System.out.println("noteId: " + noteId);
-
-
-
         } catch (IOException e) {
             e.printStackTrace();
         } catch (AppExceptionHandler appExceptionHandler) {

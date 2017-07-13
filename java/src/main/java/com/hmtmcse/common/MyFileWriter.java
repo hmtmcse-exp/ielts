@@ -10,33 +10,6 @@ import java.io.OutputStreamWriter;
  */
 public class MyFileWriter {
 
-    public static void appendToFile(String line, String location){
-        try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(location, true), "UTF-8");
-            BufferedWriter fbw = new BufferedWriter(writer);
-            fbw.newLine();
-            fbw.write(line);
-            fbw.close();
-
-        }
-        catch (IOException e) {
-            System.out.println("exception occoured"+ e);
-        }
-    }
-
-    public static void writeToFile(String line, String location){
-        try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(location), "UTF-8");
-            BufferedWriter fbw = new BufferedWriter(writer);
-            fbw.newLine();
-            fbw.write(line.trim());
-            fbw.close();
-
-        }
-        catch (IOException e) {
-            System.out.println("exception occoured"+ e);
-        }
-    }
 
     public static String toUpperFirst(String word) {
         if (word.equals("") || word == null){
