@@ -64,7 +64,21 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.topicDetailsQuestionPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.vocabularyTopicPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.showHideQuestion = new System.Windows.Forms.Button();
             this.ReadContents = new System.Windows.Forms.Button();
+            this.showHideVocTop = new System.Windows.Forms.Button();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -83,6 +97,13 @@
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.topicDetailsQuestionPanel.SuspendLayout();
+            this.vocabularyTopicPanel.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.SuspendLayout();
             // 
             // introduction
@@ -157,8 +178,7 @@
             // 
             // reading
             // 
-            this.reading.Controls.Add(this.groupBox3);
-            this.reading.Controls.Add(this.groupBox4);
+            this.reading.Controls.Add(this.tableLayoutPanel5);
             this.reading.Location = new System.Drawing.Point(4, 22);
             this.reading.Name = "reading";
             this.reading.Padding = new System.Windows.Forms.Padding(3);
@@ -170,41 +190,44 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.readingWebview);
-            this.groupBox3.Location = new System.Drawing.Point(209, 7);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1126, 555);
+            this.groupBox3.Size = new System.Drawing.Size(1057, 551);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Content Viewer";
+            this.groupBox3.Text = "Reading Context";
             // 
             // readingWebview
             // 
-            this.readingWebview.Location = new System.Drawing.Point(13, 19);
+            this.readingWebview.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.readingWebview.Location = new System.Drawing.Point(3, 16);
             this.readingWebview.MinimumSize = new System.Drawing.Size(20, 20);
             this.readingWebview.Name = "readingWebview";
-            this.readingWebview.Size = new System.Drawing.Size(1102, 521);
+            this.readingWebview.Size = new System.Drawing.Size(1051, 532);
             this.readingWebview.TabIndex = 1;
             this.readingWebview.Url = new System.Uri("", System.UriKind.Relative);
             this.readingWebview.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.readingWebview_DocumentCompleted);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.ReadContents);
             this.groupBox4.Controls.Add(this.listBox1);
-            this.groupBox4.Location = new System.Drawing.Point(8, 7);
+            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox4.Location = new System.Drawing.Point(3, 83);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(195, 555);
+            this.groupBox4.Size = new System.Drawing.Size(256, 1);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Menu Items";
+            this.groupBox4.Text = "Reading Topics";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // listBox1
             // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 21);
+            this.listBox1.Location = new System.Drawing.Point(3, 16);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(186, 407);
+            this.listBox1.Size = new System.Drawing.Size(250, 0);
             this.listBox1.TabIndex = 0;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -491,15 +514,177 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.topicDetailsQuestionPanel, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.vocabularyTopicPanel, 1, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1337, 563);
+            this.tableLayoutPanel5.TabIndex = 6;
+            // 
+            // topicDetailsQuestionPanel
+            // 
+            this.topicDetailsQuestionPanel.ColumnCount = 2;
+            this.topicDetailsQuestionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.topicDetailsQuestionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
+            this.topicDetailsQuestionPanel.Controls.Add(this.groupBox3, 0, 0);
+            this.topicDetailsQuestionPanel.Controls.Add(this.groupBox13, 1, 0);
+            this.topicDetailsQuestionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.topicDetailsQuestionPanel.Location = new System.Drawing.Point(3, 3);
+            this.topicDetailsQuestionPanel.Name = "topicDetailsQuestionPanel";
+            this.topicDetailsQuestionPanel.RowCount = 1;
+            this.topicDetailsQuestionPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.topicDetailsQuestionPanel.Size = new System.Drawing.Size(1063, 557);
+            this.topicDetailsQuestionPanel.TabIndex = 0;
+            // 
+            // vocabularyTopicPanel
+            // 
+            this.vocabularyTopicPanel.ColumnCount = 1;
+            this.vocabularyTopicPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.vocabularyTopicPanel.Controls.Add(this.groupBox4, 0, 1);
+            this.vocabularyTopicPanel.Controls.Add(this.groupBox14, 0, 0);
+            this.vocabularyTopicPanel.Controls.Add(this.tableLayoutPanel6, 0, 2);
+            this.vocabularyTopicPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vocabularyTopicPanel.Location = new System.Drawing.Point(1072, 3);
+            this.vocabularyTopicPanel.Name = "vocabularyTopicPanel";
+            this.vocabularyTopicPanel.RowCount = 3;
+            this.vocabularyTopicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.vocabularyTopicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0F));
+            this.vocabularyTopicPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.vocabularyTopicPanel.Size = new System.Drawing.Size(262, 557);
+            this.vocabularyTopicPanel.TabIndex = 1;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox13.Location = new System.Drawing.Point(1066, 3);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(1, 551);
+            this.groupBox13.TabIndex = 6;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Question Panel";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.showHideVocTop);
+            this.groupBox14.Controls.Add(this.ReadContents);
+            this.groupBox14.Controls.Add(this.showHideQuestion);
+            this.groupBox14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox14.Location = new System.Drawing.Point(3, 3);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(256, 74);
+            this.groupBox14.TabIndex = 5;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "Action";
+            // 
+            // showHideQuestion
+            // 
+            this.showHideQuestion.Location = new System.Drawing.Point(6, 16);
+            this.showHideQuestion.Name = "showHideQuestion";
+            this.showHideQuestion.Size = new System.Drawing.Size(121, 23);
+            this.showHideQuestion.TabIndex = 3;
+            this.showHideQuestion.Text = "Show Question";
+            this.showHideQuestion.UseVisualStyleBackColor = true;
+            this.showHideQuestion.Click += new System.EventHandler(this.showHideQuestion_Click);
+            // 
             // ReadContents
             // 
-            this.ReadContents.Location = new System.Drawing.Point(42, 468);
+            this.ReadContents.Location = new System.Drawing.Point(133, 16);
             this.ReadContents.Name = "ReadContents";
-            this.ReadContents.Size = new System.Drawing.Size(95, 23);
-            this.ReadContents.TabIndex = 1;
+            this.ReadContents.Size = new System.Drawing.Size(117, 52);
+            this.ReadContents.TabIndex = 4;
             this.ReadContents.Text = "Read Contens";
             this.ReadContents.UseVisualStyleBackColor = true;
-            this.ReadContents.Click += new System.EventHandler(this.ReadContents_Click);
+            // 
+            // showHideVocTop
+            // 
+            this.showHideVocTop.Location = new System.Drawing.Point(6, 45);
+            this.showHideVocTop.Name = "showHideVocTop";
+            this.showHideVocTop.Size = new System.Drawing.Size(121, 23);
+            this.showHideVocTop.TabIndex = 5;
+            this.showHideVocTop.Text = "Show Vocabulary";
+            this.showHideVocTop.UseVisualStyleBackColor = true;
+            this.showHideVocTop.Click += new System.EventHandler(this.showHideVocTop_Click);
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Controls.Add(this.groupBox15, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.groupBox16, 0, 1);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 83);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 2;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(256, 471);
+            this.tableLayoutPanel6.TabIndex = 6;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.textBox3);
+            this.groupBox15.Controls.Add(this.textBox2);
+            this.groupBox15.Controls.Add(this.textBox1);
+            this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox15.Location = new System.Drawing.Point(3, 3);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(250, 300);
+            this.groupBox15.TabIndex = 0;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Word Details";
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.listView1);
+            this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox16.Location = new System.Drawing.Point(3, 309);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(250, 159);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Words";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 19);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(241, 53);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(3, 78);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(241, 65);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(3, 149);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(241, 145);
+            this.textBox3.TabIndex = 2;
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.Location = new System.Drawing.Point(3, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(244, 140);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // IELTS
             // 
@@ -532,6 +717,14 @@
             this.groupBox5.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.topicDetailsQuestionPanel.ResumeLayout(false);
+            this.vocabularyTopicPanel.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -540,7 +733,6 @@
 
         private System.Windows.Forms.TabControl introduction;
         private System.Windows.Forms.TabPage intro;
-        private System.Windows.Forms.TabPage reading;
         private System.Windows.Forms.TabPage writing;
         private System.Windows.Forms.TabPage listening;
         private System.Windows.Forms.TabPage speaking;
@@ -548,10 +740,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.WebBrowser introWeb;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.WebBrowser readingWebview;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TabPage vocabulary;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -573,7 +761,26 @@
         private System.Windows.Forms.TextBox startLine;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button ReadContents;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TabPage reading;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.WebBrowser readingWebview;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel topicDetailsQuestionPanel;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.TableLayoutPanel vocabularyTopicPanel;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.Button ReadContents;
+        private System.Windows.Forms.Button showHideQuestion;
+        private System.Windows.Forms.Button showHideVocTop;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ListView listView1;
     }
 }

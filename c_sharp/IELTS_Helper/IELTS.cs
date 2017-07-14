@@ -20,6 +20,8 @@ namespace IELTS_Helper
         Boolean isStartTalking = false;
         VocabularyService vocabularyService = new VocabularyService();
         private WordModel tempWordModel = null;
+        bool isShowQuestionPanel = false;
+        bool isShowVocabularyPanel = false;
 
         public IELTS()
         {
@@ -192,10 +194,61 @@ namespace IELTS_Helper
         private void ReadContents_Click(object sender, EventArgs e)
         {
 
-            vocabularyService.speechSynthesizer.SpeakAsyncCancelAll();
-            vocabularyService.speechSynthesizer.Rate = -4;
-            vocabularyService.SpeakWord(readingWebview.Document.Body.InnerText);
+            //vocabularyService.speechSynthesizer.SpeakAsyncCancelAll();
+            //vocabularyService.speechSynthesizer.Rate = -4;
+            //vocabularyService.SpeakWord(readingWebview.Document.Body.InnerText);
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //readingContentTableLayout.RowStyles[0] = new RowStyle(SizeType.Percent, 25);
+            //readingContentTableLayout.ColumnStyles[0] = new ColumnStyle(SizeType.Percent,25);
+            //readingContentTableLayout.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 55);
+            //readingContentTableLayout.ColumnStyles[2] = new ColumnStyle(SizeType.Percent, 20);
+            //  readingContentTableLayout.RowStyles[1] = new RowStyle(SizeType.Percent, 55);
+        }
+
+        private void readingContentTableLayout_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void showHideQuestion_Click(object sender, EventArgs e)
+        {
+            if (isShowQuestionPanel)
+            {
+                topicDetailsQuestionPanel.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 100);
+                topicDetailsQuestionPanel.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 0);
+                showHideQuestion.Text = "Show Question";
+                isShowQuestionPanel = false;
+            }
+            else
+            {
+                topicDetailsQuestionPanel.ColumnStyles[0] = new ColumnStyle(SizeType.Percent, 60);
+                topicDetailsQuestionPanel.ColumnStyles[1] = new ColumnStyle(SizeType.Percent, 40);
+                showHideQuestion.Text = "Hide Question";
+                isShowQuestionPanel = true;
+            }
+            
+        }
+
+        private void showHideVocTop_Click(object sender, EventArgs e)
+        {
+            if (isShowVocabularyPanel)
+            {
+                vocabularyTopicPanel.RowStyles[1] = new RowStyle(SizeType.Percent, 100);
+                vocabularyTopicPanel.RowStyles[2] = new RowStyle(SizeType.Percent, 0);
+                showHideVocTop.Text = "Show Vocabulary";
+                isShowVocabularyPanel = false;
+            }
+            else
+            {
+                vocabularyTopicPanel.RowStyles[1] = new RowStyle(SizeType.Percent, 0);
+                vocabularyTopicPanel.RowStyles[2] = new RowStyle(SizeType.Percent, 100);
+                showHideVocTop.Text = "Show Topics";
+                isShowVocabularyPanel = true;
+            }
         }
     }
 }
