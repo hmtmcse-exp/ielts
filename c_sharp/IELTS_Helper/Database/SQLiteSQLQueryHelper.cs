@@ -39,6 +39,12 @@ namespace IELTS_Helper.Database
             return ExecutorReader("SELECT", sql);
         }
 
+        public SQLiteDataReader ExecuteComplexSelect(String select, String query)
+        {
+            String sql = "SELECT " + select + " " + query;
+            return ExecutorReader("ExecuteComplexSelect", sql);
+        }
+
 
         public void CreateTable(String tableName, String tableFields)
         {

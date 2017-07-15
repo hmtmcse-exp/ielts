@@ -22,10 +22,12 @@ namespace IELTS_Helper
         private WordModel tempWordModel = null;
         bool isShowQuestionPanel = false;
         bool isShowVocabularyPanel = false;
+        String lastReadinVocabularyModelKey = null;
 
         public IELTS()
         {
             InitializeComponent();
+            onLoadForm();
         }
 
         private void webBrowser3_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -36,11 +38,7 @@ namespace IELTS_Helper
         private void button1_Click(object sender, EventArgs e)
         {
             var result = CommonMark.CommonMarkConverter.Convert("**Hello world!**");
-            introWeb.DocumentText = result;
-
-            VocabularyService v = new VocabularyService();
-            v.speechSynthesizer.Rate = -4;
-            v.SpeakWord("To make political decisions about the extent and type of forestry in a region it is important to understand the consequences of those decisions. One tool for assessing the impact of forestry on the ecosystem is population viability analysis (PVA). This is a tool for predicting the probability that a species will become extinct in a particular region over a specific period. It has been successfully used in the United States to provide input into resource exploitation decisions and assist wildlife managers and there is now enormous potential for using population viability to assist wildlife management in Australia's forests. A species becomes extinct when the last individual dies. This observation is a useful starting point for any discussion of extinction as it highlights the role of luck and chance in the extinction process. To make a prediction about extinction we need to understand the processes that can contribute to it and these fall into four broad categories which are discussed below.");            
+            introWeb.DocumentText = result;           
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -99,10 +97,12 @@ namespace IELTS_Helper
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             int index = int.Parse(listBox1.SelectedIndex.ToString());
-            string curItem = (listBox1.Items[index] as NoteModel).Identifier;
-            readingWebview.Url = FileOperationService.getHtmlUrlByType(curItem);
+            NoteModel noteModel = (listBox1.Items[index] as NoteModel);
+            readingWebview.Url = FileOperationService.getHtmlUrlByType(noteModel.Identifier);
             readingWebview.IsWebBrowserContextMenuEnabled = false;
             readingWebview.AllowWebBrowserDrop = false;
+            lastReadinVocabularyModelKey = VocabularyService.GetModelKey(noteModel.Id + "", AppConstant.READING);
+            vocabularyService.LoadReadingListViewVocabulary(noteModel.Id + "", readingVocabularyListView);
 
         }
 
@@ -249,6 +249,30 @@ namespace IELTS_Helper
                 showHideVocTop.Text = "Show Topics";
                 isShowVocabularyPanel = true;
             }
+        }
+
+        private void readingVocabularyListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void readingVocabularyListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if(lastReadinVocabularyModelKey != null)
+            {
+                PlayWordSettings playWordSettings = new PlayWordSettings();
+                playWordSettings.EnglishWordLabel = readingEnglisWordText;
+                playWordSettings.BanglaWordLabel = readingBanglaWordText;
+                playWordSettings.SynonymTextBox = readingSynonymText;
+                tempWordModel = VocabularyService.wordMap[lastReadinVocabularyModelKey][e.ItemIndex];
+                vocabularyService.UpdateUI(tempWordModel, playWordSettings);
+            }
+        }
+
+        private void onLoadForm()
+        {
+            vocabularyTopicPanel.RowStyles[2] = new RowStyle(SizeType.Percent, 0);
+            vocabularyTopicPanel.RowStyles[1] = new RowStyle(SizeType.Percent, 100);
         }
     }
 }

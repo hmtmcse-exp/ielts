@@ -15,7 +15,10 @@ namespace IELTS_Helper.Service
     public class VocabularyService
     {
         public static List<WordModel> words = new List<WordModel>();
-        public static List<ListViewItem> listViewItemList = new List<ListViewItem>();
+        public static List<ListViewItem> listViewItemList = new List<ListViewItem>();        
+        public static Dictionary<String, List<WordModel>> wordMap = new Dictionary<String, List<WordModel>>();
+        public static Dictionary<String, List<ListViewItem>>  listViewItemMap = new Dictionary<String, List<ListViewItem>>();
+
         public SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         Thread thread = null;
         public static int lastReadIndex = 0;
@@ -24,6 +27,8 @@ namespace IELTS_Helper.Service
         {
             speechSynthesizer.SetOutputToDefaultAudioDevice();
         }
+
+
 
         public void load(ListView listView)
         {
@@ -59,9 +64,9 @@ namespace IELTS_Helper.Service
                 playWordSettings.EnglishWordLabel.Text = wordModel.EnglishWord;
             }
 
-            if (playWordSettings.SynonymLabel != null)
+            if (playWordSettings.SynonymTextBox != null)
             {
-                playWordSettings.SynonymLabel.Text = wordModel.Synonym;
+                playWordSettings.SynonymTextBox.Text = wordModel.Synonym;
             }
 
             if (playWordSettings.ListView != null && playWordSettings.ExtraInt1 != -1)
@@ -129,29 +134,99 @@ namespace IELTS_Helper.Service
 
         private void loadFromDatabase(Boolean isReload)
         {
-            if(isReload == false || words.Count() == 0)
+            if (isReload == false || words.Count() == 0)
             {
                 words = new List<WordModel>();
                 try
                 {
-                SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
-                SQLiteDataReader reader = sqLiteSQLQueryHelper.Select("word", "*", "ORDER BY en asc");
+                    SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
+                    SQLiteDataReader reader = sqLiteSQLQueryHelper.Select("word", "*", "ORDER BY en asc");
 
-                WordModel wordModel;
+                    WordModel wordModel;
                     int numberOfWord = 1;
                     while (reader.Read())
-                {
+                    {
                         string[] listViewItemArray = new string[5];
                         wordModel = new WordModel();
                         wordModel.Id = reader["id"].ToString();
                         wordModel.EnglishWord = listViewItemArray[1] = reader["en"].ToString();
                         wordModel.BanglaMeaning = listViewItemArray[2] = reader["bd"].ToString();
                         wordModel.PartsOfSpeech = listViewItemArray[3] = reader["en_ps"].ToString();
-                        wordModel.Synonym =  reader["en_synonym"].ToString();
+                        wordModel.Synonym = reader["en_synonym"].ToString();
                         words.Add(wordModel);
                         listViewItemArray[0] = numberOfWord + "";
                         listViewItemList.Add(new ListViewItem(listViewItemArray));
                         numberOfWord++;
+                    }
+                }
+                catch (SQLiteException sql)
+                {
+                    Console.WriteLine("Exception loadFromDatabase");
+                }
+
+            }
+        }
+
+        public void LoadReadingListViewVocabulary(String noteId, ListView listView)
+        {
+            listView.Clear();
+            listView.View = View.Details;
+            listView.GridLines = true;
+            listView.FullRowSelect = true;
+            listView.Columns.Add("SL");
+            listView.Columns.Add("English", 100);
+            listView.Columns.Add("Bangla", 100);
+
+            LoadByNoteIdFromDatabase(noteId, AppConstant.READING, false);
+            string modelKey = GetModelKey(noteId, AppConstant.READING);
+            foreach (ListViewItem listViewItem in listViewItemMap[modelKey])
+            {
+                listView.Items.Add(listViewItem);
+            }
+            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void ReadingListViewWordMeaning(int numberOfWord, string modelKey, SQLiteDataReader reader)
+        {
+            string[] listViewItemArray = new string[5];
+            listViewItemArray[0] = numberOfWord + "";
+            listViewItemArray[1] = reader["en"].ToString();
+            listViewItemArray[2] = reader["bd"].ToString();
+            listViewItemMap[modelKey].Add(new ListViewItem(listViewItemArray));
+        }
+
+
+        public static string GetModelKey(String noteId, String mapKey)
+        {
+            return noteId + "_" + mapKey;
+        }
+
+        private void LoadByNoteIdFromDatabase(String noteId, String mapKey, Boolean isReload)
+        {
+            string modelKey = GetModelKey(noteId, mapKey);
+            if (isReload == false || (wordMap[modelKey] != null && wordMap[modelKey].Count() != 0))
+            {
+                wordMap[modelKey] = new List<WordModel>();
+                listViewItemMap[modelKey] = new List<ListViewItem>();
+                try
+                {
+                SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
+                SQLiteDataReader reader = sqLiteSQLQueryHelper.ExecuteComplexSelect("*", "FROM word_note LEFT JOIN word ON word_note.word_id = word.id WHERE note_id = " + noteId + " ORDER BY word.en asc");
+
+                WordModel wordModel;
+                    int numberOfWord = 1;
+                    while (reader.Read())
+                {
+                        wordModel = new WordModel();
+                        wordModel.Id = reader["id"].ToString();
+                        wordModel.EnglishWord = reader["en"].ToString();
+                        wordModel.BanglaMeaning = reader["bd"].ToString();
+                        wordModel.PartsOfSpeech = reader["en_ps"].ToString();
+                        wordModel.Synonym =  reader["en_synonym"].ToString();
+                        wordMap[modelKey].Add(wordModel);
+                        ReadingListViewWordMeaning(numberOfWord, modelKey, reader);
+                       numberOfWord++;
                     }
             }
             catch (SQLiteException sql)

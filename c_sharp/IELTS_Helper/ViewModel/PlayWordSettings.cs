@@ -15,7 +15,7 @@ namespace IELTS_Helper.ViewModel
         public ListView ListView { get; set; } = null;
         public TextBox EnglishWordLabel { get; set; } = null;
         public TextBox BanglaWordLabel { get; set; } = null;
-        public Label SynonymLabel { get; set; } = null;
+        public TextBox SynonymTextBox { get; set; } = null;
         public Form Form { get; set; } = null;
         public bool BackgroundToUITask { get; set; } = false;
         public int ExtraInt1 { get; set; } = -1;

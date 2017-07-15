@@ -75,10 +75,10 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.readingEnglisWordText = new System.Windows.Forms.TextBox();
+            this.readingBanglaWordText = new System.Windows.Forms.TextBox();
+            this.readingSynonymText = new System.Windows.Forms.TextBox();
+            this.readingVocabularyListView = new System.Windows.Forms.ListView();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -631,9 +631,9 @@
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.textBox3);
-            this.groupBox15.Controls.Add(this.textBox2);
-            this.groupBox15.Controls.Add(this.textBox1);
+            this.groupBox15.Controls.Add(this.readingSynonymText);
+            this.groupBox15.Controls.Add(this.readingBanglaWordText);
+            this.groupBox15.Controls.Add(this.readingEnglisWordText);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(3, 3);
             this.groupBox15.Name = "groupBox15";
@@ -644,7 +644,7 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.listView1);
+            this.groupBox16.Controls.Add(this.readingVocabularyListView);
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox16.Location = new System.Drawing.Point(3, 309);
             this.groupBox16.Name = "groupBox16";
@@ -653,38 +653,43 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Words";
             // 
-            // textBox1
+            // readingEnglisWordText
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 19);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 53);
-            this.textBox1.TabIndex = 0;
+            this.readingEnglisWordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.readingEnglisWordText.Location = new System.Drawing.Point(3, 19);
+            this.readingEnglisWordText.Multiline = true;
+            this.readingEnglisWordText.Name = "readingEnglisWordText";
+            this.readingEnglisWordText.Size = new System.Drawing.Size(241, 53);
+            this.readingEnglisWordText.TabIndex = 0;
             // 
-            // textBox2
+            // readingBanglaWordText
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 78);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(241, 65);
-            this.textBox2.TabIndex = 1;
+            this.readingBanglaWordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.readingBanglaWordText.Location = new System.Drawing.Point(3, 78);
+            this.readingBanglaWordText.Multiline = true;
+            this.readingBanglaWordText.Name = "readingBanglaWordText";
+            this.readingBanglaWordText.Size = new System.Drawing.Size(241, 65);
+            this.readingBanglaWordText.TabIndex = 1;
             // 
-            // textBox3
+            // readingSynonymText
             // 
-            this.textBox3.Location = new System.Drawing.Point(3, 149);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(241, 145);
-            this.textBox3.TabIndex = 2;
+            this.readingSynonymText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.readingSynonymText.Location = new System.Drawing.Point(3, 149);
+            this.readingSynonymText.Multiline = true;
+            this.readingSynonymText.Name = "readingSynonymText";
+            this.readingSynonymText.Size = new System.Drawing.Size(241, 145);
+            this.readingSynonymText.TabIndex = 2;
             // 
-            // listView1
+            // readingVocabularyListView
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(244, 140);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.readingVocabularyListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.readingVocabularyListView.Location = new System.Drawing.Point(3, 16);
+            this.readingVocabularyListView.Name = "readingVocabularyListView";
+            this.readingVocabularyListView.Size = new System.Drawing.Size(244, 140);
+            this.readingVocabularyListView.TabIndex = 0;
+            this.readingVocabularyListView.UseCompatibleStateImageBehavior = false;
+            this.readingVocabularyListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.readingVocabularyListView_ItemSelectionChanged);
+            this.readingVocabularyListView.SelectedIndexChanged += new System.EventHandler(this.readingVocabularyListView_SelectedIndexChanged);
             // 
             // IELTS
             // 
@@ -778,9 +783,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox readingEnglisWordText;
+        private System.Windows.Forms.TextBox readingSynonymText;
+        private System.Windows.Forms.TextBox readingBanglaWordText;
+        private System.Windows.Forms.ListView readingVocabularyListView;
     }
 }
