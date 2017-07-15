@@ -79,6 +79,12 @@
             this.readingBanglaWordText = new System.Windows.Forms.TextBox();
             this.readingSynonymText = new System.Windows.Forms.TextBox();
             this.readingVocabularyListView = new System.Windows.Forms.ListView();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
+            this.readingSearch = new System.Windows.Forms.TextBox();
+            this.playAll = new System.Windows.Forms.Button();
+            this.reload = new System.Windows.Forms.Button();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -104,6 +110,9 @@
             this.tableLayoutPanel6.SuspendLayout();
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // introduction
@@ -602,6 +611,7 @@
             this.ReadContents.TabIndex = 4;
             this.ReadContents.Text = "Read Contens";
             this.ReadContents.UseVisualStyleBackColor = true;
+            this.ReadContents.Click += new System.EventHandler(this.ReadContents_Click_1);
             // 
             // showHideVocTop
             // 
@@ -617,79 +627,159 @@
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Controls.Add(this.groupBox15, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.groupBox16, 0, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 83);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(256, 471);
             this.tableLayoutPanel6.TabIndex = 6;
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.readingSynonymText);
-            this.groupBox15.Controls.Add(this.readingBanglaWordText);
-            this.groupBox15.Controls.Add(this.readingEnglisWordText);
+            this.groupBox15.Controls.Add(this.tableLayoutPanel7);
             this.groupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox15.Location = new System.Drawing.Point(3, 3);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(250, 300);
+            this.groupBox15.Size = new System.Drawing.Size(250, 253);
             this.groupBox15.TabIndex = 0;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Word Details";
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.readingVocabularyListView);
+            this.groupBox16.Controls.Add(this.tableLayoutPanel8);
             this.groupBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox16.Location = new System.Drawing.Point(3, 309);
+            this.groupBox16.Location = new System.Drawing.Point(3, 262);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(250, 159);
+            this.groupBox16.Size = new System.Drawing.Size(250, 206);
             this.groupBox16.TabIndex = 1;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Words";
             // 
             // readingEnglisWordText
             // 
+            this.readingEnglisWordText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.readingEnglisWordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.readingEnglisWordText.Location = new System.Drawing.Point(3, 19);
+            this.readingEnglisWordText.Location = new System.Drawing.Point(3, 3);
             this.readingEnglisWordText.Multiline = true;
             this.readingEnglisWordText.Name = "readingEnglisWordText";
-            this.readingEnglisWordText.Size = new System.Drawing.Size(241, 53);
+            this.readingEnglisWordText.Size = new System.Drawing.Size(238, 54);
             this.readingEnglisWordText.TabIndex = 0;
             // 
             // readingBanglaWordText
             // 
+            this.readingBanglaWordText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.readingBanglaWordText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.readingBanglaWordText.Location = new System.Drawing.Point(3, 78);
+            this.readingBanglaWordText.Location = new System.Drawing.Point(3, 63);
             this.readingBanglaWordText.Multiline = true;
             this.readingBanglaWordText.Name = "readingBanglaWordText";
-            this.readingBanglaWordText.Size = new System.Drawing.Size(241, 65);
+            this.readingBanglaWordText.Size = new System.Drawing.Size(238, 64);
             this.readingBanglaWordText.TabIndex = 1;
             // 
             // readingSynonymText
             // 
+            this.readingSynonymText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.readingSynonymText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.readingSynonymText.Location = new System.Drawing.Point(3, 149);
+            this.readingSynonymText.Location = new System.Drawing.Point(3, 133);
             this.readingSynonymText.Multiline = true;
             this.readingSynonymText.Name = "readingSynonymText";
-            this.readingSynonymText.Size = new System.Drawing.Size(241, 145);
+            this.readingSynonymText.Size = new System.Drawing.Size(238, 98);
             this.readingSynonymText.TabIndex = 2;
             // 
             // readingVocabularyListView
             // 
             this.readingVocabularyListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.readingVocabularyListView.Location = new System.Drawing.Point(3, 16);
+            this.readingVocabularyListView.Location = new System.Drawing.Point(3, 43);
             this.readingVocabularyListView.Name = "readingVocabularyListView";
-            this.readingVocabularyListView.Size = new System.Drawing.Size(244, 140);
+            this.readingVocabularyListView.Size = new System.Drawing.Size(238, 141);
             this.readingVocabularyListView.TabIndex = 0;
             this.readingVocabularyListView.UseCompatibleStateImageBehavior = false;
             this.readingVocabularyListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.readingVocabularyListView_ItemSelectionChanged);
             this.readingVocabularyListView.SelectedIndexChanged += new System.EventHandler(this.readingVocabularyListView_SelectedIndexChanged);
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 1;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Controls.Add(this.readingBanglaWordText, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.readingSynonymText, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.readingEnglisWordText, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(244, 234);
+            this.tableLayoutPanel7.TabIndex = 3;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.readingVocabularyListView, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 16);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(244, 187);
+            this.tableLayoutPanel8.TabIndex = 0;
+            // 
+            // tableLayoutPanel9
+            // 
+            this.tableLayoutPanel9.ColumnCount = 3;
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel9.Controls.Add(this.readingSearch, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.playAll, 1, 0);
+            this.tableLayoutPanel9.Controls.Add(this.reload, 2, 0);
+            this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel9.Name = "tableLayoutPanel9";
+            this.tableLayoutPanel9.RowCount = 1;
+            this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(238, 34);
+            this.tableLayoutPanel9.TabIndex = 1;
+            // 
+            // readingSearch
+            // 
+            this.readingSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.readingSearch.Location = new System.Drawing.Point(3, 3);
+            this.readingSearch.Multiline = true;
+            this.readingSearch.Name = "readingSearch";
+            this.readingSearch.Size = new System.Drawing.Size(112, 28);
+            this.readingSearch.TabIndex = 0;
+            this.readingSearch.TextChanged += new System.EventHandler(this.readingSearch_TextChanged);
+            // 
+            // playAll
+            // 
+            this.playAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.playAll.Location = new System.Drawing.Point(121, 3);
+            this.playAll.Name = "playAll";
+            this.playAll.Size = new System.Drawing.Size(54, 28);
+            this.playAll.TabIndex = 1;
+            this.playAll.Text = "Play All";
+            this.playAll.UseVisualStyleBackColor = true;
+            this.playAll.Click += new System.EventHandler(this.playAll_Click);
+            // 
+            // reload
+            // 
+            this.reload.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reload.Location = new System.Drawing.Point(181, 3);
+            this.reload.Name = "reload";
+            this.reload.Size = new System.Drawing.Size(54, 28);
+            this.reload.TabIndex = 2;
+            this.reload.Text = "Reload";
+            this.reload.UseVisualStyleBackColor = true;
             // 
             // IELTS
             // 
@@ -728,8 +818,12 @@
             this.groupBox14.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
             this.groupBox16.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.tableLayoutPanel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -787,5 +881,11 @@
         private System.Windows.Forms.TextBox readingSynonymText;
         private System.Windows.Forms.TextBox readingBanglaWordText;
         private System.Windows.Forms.ListView readingVocabularyListView;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
+        private System.Windows.Forms.TextBox readingSearch;
+        private System.Windows.Forms.Button playAll;
+        private System.Windows.Forms.Button reload;
     }
 }

@@ -274,5 +274,48 @@ namespace IELTS_Helper
             vocabularyTopicPanel.RowStyles[2] = new RowStyle(SizeType.Percent, 0);
             vocabularyTopicPanel.RowStyles[1] = new RowStyle(SizeType.Percent, 100);
         }
+
+        private void playAll_Click(object sender, EventArgs e)
+        {
+            PlayWordSettings playWordSettings = new PlayWordSettings();
+            playWordSettings.Form = this;
+            playWordSettings.BackgroundToUITask = true;
+            playWordSettings.EnglishWordLabel = readingEnglisWordText;
+            playWordSettings.BanglaWordLabel = readingBanglaWordText;
+            playWordSettings.SynonymTextBox = readingSynonymText;
+            playWordSettings.ListView = readingVocabularyListView;
+            playWordSettings.StartIndex = 0;
+            if (isStartTalking)
+            {
+                isStartTalking = false;
+                playAll.Text = "Play All";
+                playWordSettings.WillRun = false;
+                comboBox1.Enabled = true;
+            }
+            else
+            {
+                isStartTalking = true;
+                playAll.Text = "Stop";
+                playWordSettings.WillRun = true;
+            }
+            vocabularyService.PlayWords(VocabularyService.wordMap[lastReadinVocabularyModelKey], playWordSettings);
+        }
+
+        private void readingSearch_TextChanged(object sender, EventArgs e)
+        {
+            ListViewItem searchItem = readingVocabularyListView.FindItemWithText(readingSearch.Text, true, 0, true);
+            if (searchItem != null)
+            {
+                readingVocabularyListView.TopItem = searchItem;
+            }
+        }
+
+        private void ReadContents_Click_1(object sender, EventArgs e)
+        {
+            vocabularyService.speechSynthesizer.SpeakAsyncCancelAll();
+            vocabularyService.speechSynthesizer.Rate = -4;
+            vocabularyService.SpeakWord(readingWebview.Document.Body.InnerText);
+
+        }
     }
 }
