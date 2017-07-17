@@ -24,7 +24,6 @@ namespace IELTS_Helper.Service
                     vlod.ListViewInstance.View = View.Details;
                     vlod.ListViewInstance.GridLines = true;
                     vlod.ListViewInstance.FullRowSelect = true;
-
                     for (int a = 0; a < vlod.Header.Length; a++)
                     {
                         vlod.ListViewInstance.Columns.Add(vlod.Header[a]);

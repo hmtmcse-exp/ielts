@@ -161,11 +161,11 @@ namespace IELTS_Helper
 
         private void searchVocabulary_TextChanged(object sender, EventArgs e)
         {
-           // ListViewItem searchItem = vocabularyListView.FindItemWithText(searchVocabulary.Text, true, 0, true);
-           //if(searchItem != null)
-           // {
-           //     vocabularyListView.TopItem = searchItem;
-           // }
+            ListViewItem searchItem = vocabularyListView.FindItemWithText(searchVocabulary.Text, true, 0, true);
+            if (searchItem != null)
+            {
+                vocabularyListView.TopItem = searchItem;
+            }
         }
 
         private void vocabularyListView_SelectedIndexChanged(object sender, EventArgs e)
@@ -319,11 +319,7 @@ namespace IELTS_Helper
 
         private void readingSearch_TextChanged(object sender, EventArgs e)
         {
-            ListViewItem searchItem = readingVocabularyListView.FindItemWithText(readingSearch.Text, true, 0, true);
-            if (searchItem != null)
-            {
-                readingVocabularyListView.TopItem = searchItem;
-            }
+            
         }
 
         private void ReadContents_Click_1(object sender, EventArgs e)
