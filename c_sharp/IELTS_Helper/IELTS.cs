@@ -1,4 +1,5 @@
-﻿using IELTS_Helper.Database;
+﻿using IELTS_Helper.Data;
+using IELTS_Helper.Database;
 using IELTS_Helper.Service;
 using IELTS_Helper.ViewModel;
 using System;
@@ -23,6 +24,11 @@ namespace IELTS_Helper
         bool isShowQuestionPanel = false;
         bool isShowVocabularyPanel = false;
         String lastReadinVocabularyModelKey = null;
+        SpeakWordData playReadingContent = new SpeakWordData
+        {
+            startText = "Read Contens",
+            stopText = "Stop"
+        };
 
         public IELTS()
         {
@@ -98,9 +104,14 @@ namespace IELTS_Helper
         {
             int index = int.Parse(listBox1.SelectedIndex.ToString());
             NoteModel noteModel = (listBox1.Items[index] as NoteModel);
-            readingWebview.Url = FileOperationService.getHtmlUrlByType(noteModel.Identifier);
+
+            readingWebview.Url = FileOperationService.getReadingQuestionURL(noteModel.Identifier);
             readingWebview.IsWebBrowserContextMenuEnabled = false;
             readingWebview.AllowWebBrowserDrop = false;
+
+            CommonService.SetContentToWebbrowser(readingQuestionPanel, FileOperationService.GetReqdingQuestionURL(noteModel.Identifier));
+
+            
             lastReadinVocabularyModelKey = VocabularyService.GetModelKey(noteModel.Id + "", AppConstant.READING);
             vocabularyService.LoadReadingListViewVocabulary(noteModel.Id + "", readingVocabularyListView);
 
@@ -312,9 +323,11 @@ namespace IELTS_Helper
 
         private void ReadContents_Click_1(object sender, EventArgs e)
         {
-            vocabularyService.speechSynthesizer.SpeakAsyncCancelAll();
+            
             vocabularyService.speechSynthesizer.Rate = -4;
-            vocabularyService.SpeakWord(readingWebview.Document.Body.InnerText);
+            playReadingContent.words = readingWebview.Document.Body.InnerText;
+            playReadingContent.ButtonInstance = ReadContents;
+            vocabularyService.SpeakWord(playReadingContent);
 
         }
     }

@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Database\SQLiteConnectionManager.cs" />
     <Compile Include="Database\SQLiteSQLQueryHelper.cs" />
+    <Compile Include="Data\SpeakWordData.cs" />
     <Compile Include="IELTS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +75,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AppConstant.cs" />
+    <Compile Include="Service\CommonService.cs" />
     <Compile Include="Service\FileOperationService.cs" />
     <Compile Include="Service\NoteService.cs" />
     <Compile Include="Service\StaticDataHolder.cs" />

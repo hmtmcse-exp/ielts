@@ -1,4 +1,5 @@
-﻿using IELTS_Helper.Database;
+﻿using IELTS_Helper.Data;
+using IELTS_Helper.Database;
 using IELTS_Helper.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,30 @@ namespace IELTS_Helper.Service
         public void SpeakWord(String word)
         {
             speechSynthesizer.SpeakAsync(word);
+        }
+
+
+        public void SpeakWord(SpeakWordData speakWordData)
+        {
+            if(speakWordData.ButtonInstance != null)
+            {
+                if (speakWordData.isStarted)
+                {
+                    speechSynthesizer.SpeakAsyncCancelAll();
+                    speakWordData.isStarted = false;
+                    speakWordData.ButtonInstance.Text = speakWordData.startText;
+                }
+                else
+                {
+                    if(speakWordData.words != null)
+                    {
+                        speechSynthesizer.SpeakAsync(speakWordData.words);
+                    }                    
+                    speakWordData.isStarted = true;
+                    speakWordData.ButtonInstance.Text = speakWordData.stopText;
+                }
+            }
+            
         }
 
         public void PlayWordLoopBG(List<WordModel> wordList, PlayWordSettings playWordSettings)
