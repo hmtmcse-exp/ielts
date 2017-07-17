@@ -261,11 +261,5 @@ namespace IELTS_Helper.Service
 
             }
         }
-
-        public void VocabularyListViewManipulation(ListView lisView, List<WordModel> wordList)
-        {
-
-        }
-
     }
 }
