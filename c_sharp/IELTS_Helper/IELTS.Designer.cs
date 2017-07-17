@@ -40,6 +40,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.readingWebview = new System.Windows.Forms.WebBrowser();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.readingQuestionPanel = new System.Windows.Forms.WebBrowser();
             this.vocabularyTopicPanel = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -85,7 +86,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.readingQuestionPanel = new System.Windows.Forms.WebBrowser();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -260,6 +260,15 @@
             this.groupBox13.TabIndex = 6;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Question Panel";
+            // 
+            // readingQuestionPanel
+            // 
+            this.readingQuestionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.readingQuestionPanel.Location = new System.Drawing.Point(3, 16);
+            this.readingQuestionPanel.MinimumSize = new System.Drawing.Size(20, 20);
+            this.readingQuestionPanel.Name = "readingQuestionPanel";
+            this.readingQuestionPanel.Size = new System.Drawing.Size(292, 532);
+            this.readingQuestionPanel.TabIndex = 0;
             // 
             // vocabularyTopicPanel
             // 
@@ -450,8 +459,6 @@
             this.readingVocabularyListView.Size = new System.Drawing.Size(238, 141);
             this.readingVocabularyListView.TabIndex = 0;
             this.readingVocabularyListView.UseCompatibleStateImageBehavior = false;
-            this.readingVocabularyListView.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.readingVocabularyListView_ItemSelectionChanged);
-            this.readingVocabularyListView.SelectedIndexChanged += new System.EventHandler(this.readingVocabularyListView_SelectedIndexChanged);
             // 
             // tableLayoutPanel9
             // 
@@ -783,15 +790,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
-            // 
-            // readingQuestionPanel
-            // 
-            this.readingQuestionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.readingQuestionPanel.Location = new System.Drawing.Point(3, 16);
-            this.readingQuestionPanel.MinimumSize = new System.Drawing.Size(20, 20);
-            this.readingQuestionPanel.Name = "readingQuestionPanel";
-            this.readingQuestionPanel.Size = new System.Drawing.Size(292, 532);
-            this.readingQuestionPanel.TabIndex = 0;
             // 
             // IELTS
             // 

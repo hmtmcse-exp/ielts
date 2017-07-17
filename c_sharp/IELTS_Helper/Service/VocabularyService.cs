@@ -199,6 +199,7 @@ namespace IELTS_Helper.Service
             LoadByNoteIdFromDatabase(noteId, AppConstant.READING, false);
             string modelKey = GetModelKey(noteId, AppConstant.READING);
             vlod.ListViewItemList = listViewItemMap[modelKey];
+            vlod.WordModelList = wordMap[modelKey];
             ReadingVocabularyListService.Populate(vlod);
         }
 

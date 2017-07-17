@@ -39,8 +39,10 @@ namespace IELTS_Helper.Service
 
                     if (vlod.SearchBoxText != null)
                     {
-                       vlod.SearchBoxText.TextChanged += new EventHandler(this.SearchTextBoxChanged);
+                       vlod.SearchBoxText.TextChanged += this.SearchTextBoxChanged;
                     }
+
+                    vlod.ListViewInstance.ItemSelectionChanged += this.ListViewItemSelectionChanged;
                 }
             }
 
@@ -53,6 +55,38 @@ namespace IELTS_Helper.Service
             if (searchItem != null)
             {
                 vlod.ListViewInstance.TopItem = searchItem;
+            }
+        }
+
+        private void ListViewItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
+        {
+            if(vlod.WordModelList != null)
+            {
+                this.UpdateUI(vlod.WordModelList[e.ItemIndex]);
+            }
+            
+        }
+
+        private void UpdateUI(WordModel wordModel)
+        {
+            if(wordModel == null)
+            {
+                return;
+            }
+
+            if (vlod.BanglaWordText != null)
+            {
+                vlod.BanglaWordText.Text = wordModel.BanglaMeaning;
+            }
+
+            if (vlod.EnglishWordText != null)
+            {
+                vlod.EnglishWordText.Text = wordModel.EnglishWord;
+            }
+
+            if (vlod.SynonymsText != null)
+            {
+                vlod.SynonymsText.Text = wordModel.Synonym;
             }
         }
 

@@ -116,8 +116,11 @@ namespace IELTS_Helper
             
             lastReadinVocabularyModelKey = VocabularyService.GetModelKey(noteModel.Id + "", AppConstant.READING);
 
-            ReadingVocabularyListviewData.SearchBoxText = searchVocabulary;
+            ReadingVocabularyListviewData.SearchBoxText = readingSearch;
             ReadingVocabularyListviewData.ListViewInstance = readingVocabularyListView;
+            ReadingVocabularyListviewData.EnglishWordText = readingEnglisWordText;
+            ReadingVocabularyListviewData.BanglaWordText = readingBanglaWordText;
+            ReadingVocabularyListviewData.SynonymsText = readingSynonymText;
             vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData, noteModel.Id + "");
 
         }
@@ -267,23 +270,7 @@ namespace IELTS_Helper
             }
         }
 
-        private void readingVocabularyListView_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void readingVocabularyListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
-        {
-            if(lastReadinVocabularyModelKey != null)
-            {
-                PlayWordSettings playWordSettings = new PlayWordSettings();
-                playWordSettings.EnglishWordLabel = readingEnglisWordText;
-                playWordSettings.BanglaWordLabel = readingBanglaWordText;
-                playWordSettings.SynonymTextBox = readingSynonymText;
-                tempWordModel = VocabularyService.wordMap[lastReadinVocabularyModelKey][e.ItemIndex];
-                vocabularyService.UpdateUI(tempWordModel, playWordSettings);
-            }
-        }
+        
 
         private void onLoadForm()
         {
