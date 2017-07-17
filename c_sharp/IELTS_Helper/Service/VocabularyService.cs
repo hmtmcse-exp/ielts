@@ -23,6 +23,7 @@ namespace IELTS_Helper.Service
         public SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         Thread thread = null;
         public static int lastReadIndex = 0;
+        VocabularyListService ReadingVocabularyListService = new VocabularyListService();
 
         public VocabularyService()
         {
@@ -192,24 +193,13 @@ namespace IELTS_Helper.Service
             }
         }
 
-        public void LoadReadingListViewVocabulary(String noteId, ListView listView)
+        public void LoadReadingListViewVocabulary(VocabularyListOrganizerData vlod, String noteId)
         {
-            listView.Clear();
-            listView.View = View.Details;
-            listView.GridLines = true;
-            listView.FullRowSelect = true;
-            listView.Columns.Add("SL");
-            listView.Columns.Add("English", 100);
-            listView.Columns.Add("Bangla", 100);
-
+            vlod.Header = new string[3] { "SL", "English", "Bangla" };
             LoadByNoteIdFromDatabase(noteId, AppConstant.READING, false);
             string modelKey = GetModelKey(noteId, AppConstant.READING);
-            foreach (ListViewItem listViewItem in listViewItemMap[modelKey])
-            {
-                listView.Items.Add(listViewItem);
-            }
-            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            listView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            vlod.ListViewItemList = listViewItemMap[modelKey];
+            ReadingVocabularyListService.Populate(vlod);
         }
 
         private void ReadingListViewWordMeaning(int numberOfWord, string modelKey, SQLiteDataReader reader)

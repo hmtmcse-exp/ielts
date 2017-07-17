@@ -20,6 +20,7 @@ namespace IELTS_Helper.Service
             {
                 if (vlod.ListViewInstance != null && vlod.ListViewItemList != null && vlod.Header.Length != 0)
                 {
+                    vlod.ListViewInstance.Clear();
                     vlod.ListViewInstance.View = View.Details;
                     vlod.ListViewInstance.GridLines = true;
                     vlod.ListViewInstance.FullRowSelect = true;

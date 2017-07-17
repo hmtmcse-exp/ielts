@@ -79,9 +79,11 @@
     <Compile Include="Service\FileOperationService.cs" />
     <Compile Include="Service\NoteService.cs" />
     <Compile Include="Service\StaticDataHolder.cs" />
+    <Compile Include="Service\VocabularyListService.cs" />
     <Compile Include="Service\VocabularyService.cs" />
     <Compile Include="ViewModel\NoteModel.cs" />
     <Compile Include="ViewModel\PlayWordSettings.cs" />
+    <Compile Include="ViewModel\VocabularyListOrganizerData.cs" />
     <Compile Include="ViewModel\WordModel.cs" />
     <EmbeddedResource Include="IELTS.resx">
       <DependentUpon>IELTS.cs</DependentUpon>

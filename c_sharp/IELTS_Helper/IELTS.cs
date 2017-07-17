@@ -30,6 +30,8 @@ namespace IELTS_Helper
             stopText = "Stop"
         };
 
+        VocabularyListOrganizerData ReadingVocabularyListviewData = new VocabularyListOrganizerData();
+
         public IELTS()
         {
             InitializeComponent();
@@ -113,7 +115,10 @@ namespace IELTS_Helper
 
             
             lastReadinVocabularyModelKey = VocabularyService.GetModelKey(noteModel.Id + "", AppConstant.READING);
-            vocabularyService.LoadReadingListViewVocabulary(noteModel.Id + "", readingVocabularyListView);
+
+            ReadingVocabularyListviewData.SearchBoxText = searchVocabulary;
+            ReadingVocabularyListviewData.ListViewInstance = readingVocabularyListView;
+            vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData, noteModel.Id + "");
 
         }
 
@@ -156,11 +161,11 @@ namespace IELTS_Helper
 
         private void searchVocabulary_TextChanged(object sender, EventArgs e)
         {
-            ListViewItem searchItem = vocabularyListView.FindItemWithText(searchVocabulary.Text, true, 0, true);
-           if(searchItem != null)
-            {
-                vocabularyListView.TopItem = searchItem;
-            }
+           // ListViewItem searchItem = vocabularyListView.FindItemWithText(searchVocabulary.Text, true, 0, true);
+           //if(searchItem != null)
+           // {
+           //     vocabularyListView.TopItem = searchItem;
+           // }
         }
 
         private void vocabularyListView_SelectedIndexChanged(object sender, EventArgs e)
