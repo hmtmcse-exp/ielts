@@ -18,8 +18,12 @@ namespace IELTS_Helper.ViewModel
         public Button PlayAllButton { get; set; } = null;
         public Button ReloadButton { get; set; } = null;
         public ListView ListViewInstance { get; set; } = null;
-        public int LastIndex { get; set; } = 0;
+        public int PlayWordLastIndex { get; set; } = 0;
+        public int PlayWordLoopDelay { get; set; } = 1;
         public string[] Header {get;set;}
+        public Form Form { get; set; } = null;
+        public string PlayButtonStartText { get; set; } = "Play All";
+        public string PlayButtonStoptText { get; set; } = "Stop Play";
 
     }
 }

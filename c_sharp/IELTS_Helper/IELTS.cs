@@ -121,6 +121,8 @@ namespace IELTS_Helper
             ReadingVocabularyListviewData.EnglishWordText = readingEnglisWordText;
             ReadingVocabularyListviewData.BanglaWordText = readingBanglaWordText;
             ReadingVocabularyListviewData.SynonymsText = readingSynonymText;
+            ReadingVocabularyListviewData.Form = this;
+            ReadingVocabularyListviewData.PlayAllButton = playAll;
             vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData, noteModel.Id + "");
 
         }
@@ -280,28 +282,7 @@ namespace IELTS_Helper
 
         private void playAll_Click(object sender, EventArgs e)
         {
-            PlayWordSettings playWordSettings = new PlayWordSettings();
-            playWordSettings.Form = this;
-            playWordSettings.BackgroundToUITask = true;
-            playWordSettings.EnglishWordLabel = readingEnglisWordText;
-            playWordSettings.BanglaWordLabel = readingBanglaWordText;
-            playWordSettings.SynonymTextBox = readingSynonymText;
-            playWordSettings.ListView = readingVocabularyListView;
-            playWordSettings.StartIndex = 0;
-            if (isStartTalking)
-            {
-                isStartTalking = false;
-                playAll.Text = "Play All";
-                playWordSettings.WillRun = false;
-                comboBox1.Enabled = true;
-            }
-            else
-            {
-                isStartTalking = true;
-                playAll.Text = "Stop";
-                playWordSettings.WillRun = true;
-            }
-            vocabularyService.PlayWords(VocabularyService.wordMap[lastReadinVocabularyModelKey], playWordSettings);
+          
         }
 
         private void readingSearch_TextChanged(object sender, EventArgs e)

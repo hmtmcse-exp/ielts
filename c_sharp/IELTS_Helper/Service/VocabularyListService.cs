@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,6 +14,8 @@ namespace IELTS_Helper.Service
         private VocabularyListOrganizerData vlod = null;
         private WordModel tempWordModel = null;
         public TextToSoundService textToSound = new TextToSoundService();
+        private Thread thread = null;
+        private bool isPlayLoopOn = false;
 
         public void Populate(VocabularyListOrganizerData vlod)
         {
@@ -47,6 +50,13 @@ namespace IELTS_Helper.Service
                     vlod.ListViewInstance.ItemSelectionChanged += this.ListViewItemSelectionChanged;
                     vlod.ListViewInstance.MouseDoubleClick += this.ListViewMouseDoubleClick;
                     vlod.ListViewInstance.KeyDown += this.ListViewKeyDown;
+
+                    if(vlod.PlayAllButton != null && vlod.Form != null)
+                    {
+                        vlod.PlayAllButton.Text = vlod.PlayButtonStartText;
+                        isPlayLoopOn = false;
+                        vlod.PlayAllButton.Click += this.PlayAllButtonClick;
+                    }
                 }
             }
 
@@ -113,6 +123,56 @@ namespace IELTS_Helper.Service
             if (tempWordModel != null)
             {
                 textToSound.PlayAsync(tempWordModel.EnglishWord);
+            }
+        }
+
+        private void PlayWordInBackground()
+        {
+            for (int i = vlod.PlayWordLastIndex; i < vlod.WordModelList.Count(); i++)
+            {
+                WordModel wordModel = vlod.WordModelList[i];
+                vlod.PlayWordLastIndex = i;
+                if (wordModel.EnglishWord != null)
+                {
+                    if (vlod.Form != null)
+                    {
+                        vlod.Form.Invoke
+                            ((MethodInvoker)delegate
+                            {
+                                UpdateUI(wordModel);
+                            }
+                            );
+                    }
+                    textToSound.Play(wordModel.EnglishWord);
+                    vlod.PlayWordLastIndex++;
+                    Thread.Sleep(1000 * vlod.PlayWordLoopDelay);
+                }
+                else
+                {
+                    VocabularyService.lastReadIndex++;
+                }
+
+            }
+        }
+
+        private void PlayAllButtonClick(object sender, EventArgs e)
+        {
+            if (thread != null)
+            {
+                thread.Abort();
+            }
+            thread = new Thread(() => PlayWordInBackground());
+            if (isPlayLoopOn)
+            {
+                thread.Abort();
+                isPlayLoopOn = false;
+                vlod.PlayAllButton.Text = vlod.PlayButtonStartText;
+            }
+            else
+            {
+                thread.Start();
+                isPlayLoopOn = true;
+                vlod.PlayAllButton.Text = vlod.PlayButtonStoptText;
             }
         }
 
