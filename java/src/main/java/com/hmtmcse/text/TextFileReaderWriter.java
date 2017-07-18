@@ -87,6 +87,8 @@ public class TextFileReaderWriter {
     public static String removeSpecialCharacter(String content){
         String findReplace = content.replaceAll("’","'");
         findReplace = findReplace.replaceAll("–","-");
+        findReplace = findReplace.replaceAll("…",".");
+        findReplace = findReplace.replaceAll("‘","");
         return findReplace;
     }
 

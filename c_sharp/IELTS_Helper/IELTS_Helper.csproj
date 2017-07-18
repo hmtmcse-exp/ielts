@@ -160,6 +160,9 @@
     <Content Include="Resources\Reading\HTML\2_visual_symbols_and_the_blind.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\2_visual_symbols_and_the_blind_question.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Reading\HTML\3_zoo_conservation_programmes.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
