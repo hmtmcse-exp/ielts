@@ -85,7 +85,6 @@
             this.startLine = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -216,8 +215,8 @@
             // topicDetailsQuestionPanel
             // 
             this.topicDetailsQuestionPanel.ColumnCount = 2;
-            this.topicDetailsQuestionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
-            this.topicDetailsQuestionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
+            this.topicDetailsQuestionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.topicDetailsQuestionPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0F));
             this.topicDetailsQuestionPanel.Controls.Add(this.groupBox3, 0, 0);
             this.topicDetailsQuestionPanel.Controls.Add(this.groupBox13, 1, 0);
             this.topicDetailsQuestionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -234,7 +233,7 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(753, 551);
+            this.groupBox3.Size = new System.Drawing.Size(1057, 551);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Reading Context";
@@ -245,7 +244,7 @@
             this.readingWebview.Location = new System.Drawing.Point(3, 16);
             this.readingWebview.MinimumSize = new System.Drawing.Size(20, 20);
             this.readingWebview.Name = "readingWebview";
-            this.readingWebview.Size = new System.Drawing.Size(747, 532);
+            this.readingWebview.Size = new System.Drawing.Size(1051, 532);
             this.readingWebview.TabIndex = 1;
             this.readingWebview.Url = new System.Uri("", System.UriKind.Relative);
             this.readingWebview.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.readingWebview_DocumentCompleted);
@@ -254,9 +253,9 @@
             // 
             this.groupBox13.Controls.Add(this.readingQuestionPanel);
             this.groupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox13.Location = new System.Drawing.Point(762, 3);
+            this.groupBox13.Location = new System.Drawing.Point(1066, 3);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(298, 551);
+            this.groupBox13.Size = new System.Drawing.Size(1, 551);
             this.groupBox13.TabIndex = 6;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Question Panel";
@@ -267,7 +266,7 @@
             this.readingQuestionPanel.Location = new System.Drawing.Point(3, 16);
             this.readingQuestionPanel.MinimumSize = new System.Drawing.Size(20, 20);
             this.readingQuestionPanel.Name = "readingQuestionPanel";
-            this.readingQuestionPanel.Size = new System.Drawing.Size(292, 532);
+            this.readingQuestionPanel.Size = new System.Drawing.Size(20, 532);
             this.readingQuestionPanel.TabIndex = 0;
             // 
             // vocabularyTopicPanel
@@ -871,7 +870,6 @@
         private System.Windows.Forms.TextBox startLine;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.TabPage reading;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.WebBrowser readingWebview;
