@@ -11,6 +11,8 @@ namespace IELTS_Helper.Service
     public class VocabularyListService
     {
         private VocabularyListOrganizerData vlod = null;
+        private WordModel tempWordModel = null;
+        public TextToSoundService textToSound = new TextToSoundService();
 
         public void Populate(VocabularyListOrganizerData vlod)
         {
@@ -43,6 +45,8 @@ namespace IELTS_Helper.Service
                     }
 
                     vlod.ListViewInstance.ItemSelectionChanged += this.ListViewItemSelectionChanged;
+                    vlod.ListViewInstance.MouseDoubleClick += this.ListViewMouseDoubleClick;
+                    vlod.ListViewInstance.KeyDown += this.ListViewKeyDown;
                 }
             }
 
@@ -62,7 +66,8 @@ namespace IELTS_Helper.Service
         {
             if(vlod.WordModelList != null)
             {
-                this.UpdateUI(vlod.WordModelList[e.ItemIndex]);
+                tempWordModel = vlod.WordModelList[e.ItemIndex];
+                this.UpdateUI(tempWordModel);
             }
             
         }
@@ -87,6 +92,27 @@ namespace IELTS_Helper.Service
             if (vlod.SynonymsText != null)
             {
                 vlod.SynonymsText.Text = wordModel.Synonym;
+            }
+        }
+
+
+        private void ListViewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (tempWordModel != null)
+                {
+                    textToSound.PlayAsync(tempWordModel.EnglishWord);
+                }
+
+            }
+        }
+
+        private void ListViewMouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (tempWordModel != null)
+            {
+                textToSound.PlayAsync(tempWordModel.EnglishWord);
             }
         }
 
