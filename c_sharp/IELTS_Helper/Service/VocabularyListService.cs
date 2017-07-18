@@ -126,6 +126,15 @@ namespace IELTS_Helper.Service
             }
         }
 
+        private void SelectListViewRow(int rowIndex)
+        {
+            vlod.ListViewInstance.SelectedItems.Clear();
+            vlod.ListViewInstance.Items[rowIndex].Selected = true;
+            vlod.ListViewInstance.Items[rowIndex].Focused = true;
+            vlod.ListViewInstance.TopItem = vlod.ListViewInstance.Items[rowIndex];
+            vlod.ListViewInstance.Select();
+        }
+
         private void PlayWordInBackground()
         {
             for (int i = vlod.PlayWordLastIndex; i < vlod.WordModelList.Count(); i++)
@@ -139,7 +148,7 @@ namespace IELTS_Helper.Service
                         vlod.Form.Invoke
                             ((MethodInvoker)delegate
                             {
-                                UpdateUI(wordModel);
+                                SelectListViewRow(i);
                             }
                             );
                     }
@@ -149,7 +158,7 @@ namespace IELTS_Helper.Service
                 }
                 else
                 {
-                    VocabularyService.lastReadIndex++;
+                    vlod.PlayWordLastIndex++;
                 }
 
             }
