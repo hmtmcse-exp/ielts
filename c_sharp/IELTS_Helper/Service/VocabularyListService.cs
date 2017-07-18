@@ -44,17 +44,24 @@ namespace IELTS_Helper.Service
 
                     if (vlod.SearchBoxText != null)
                     {
-                       vlod.SearchBoxText.TextChanged += this.SearchTextBoxChanged;
+                        vlod.SearchBoxText.TextChanged -= this.SearchTextBoxChanged;
+                        vlod.SearchBoxText.TextChanged += this.SearchTextBoxChanged;
                     }
 
+                    vlod.ListViewInstance.ItemSelectionChanged -= this.ListViewItemSelectionChanged;
                     vlod.ListViewInstance.ItemSelectionChanged += this.ListViewItemSelectionChanged;
+
+                    vlod.ListViewInstance.MouseDoubleClick -= this.ListViewMouseDoubleClick;
                     vlod.ListViewInstance.MouseDoubleClick += this.ListViewMouseDoubleClick;
+
+                    vlod.ListViewInstance.KeyDown -= this.ListViewKeyDown;
                     vlod.ListViewInstance.KeyDown += this.ListViewKeyDown;
 
-                    if(vlod.PlayAllButton != null && vlod.Form != null)
+                    if (vlod.PlayAllButton != null && vlod.Form != null)
                     {
                         vlod.PlayAllButton.Text = vlod.PlayButtonStartText;
                         isPlayLoopOn = false;
+                        vlod.PlayAllButton.Click -= this.PlayAllButtonClick;
                         vlod.PlayAllButton.Click += this.PlayAllButtonClick;
                     }
                 }

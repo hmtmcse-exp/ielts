@@ -123,6 +123,7 @@ namespace IELTS_Helper
             ReadingVocabularyListviewData.SynonymsText = readingSynonymText;
             ReadingVocabularyListviewData.Form = this;
             ReadingVocabularyListviewData.PlayAllButton = playAll;
+            ReadingVocabularyListviewData.PlayWordLastIndex = 0;
             vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData, noteModel.Id + "");
 
         }
