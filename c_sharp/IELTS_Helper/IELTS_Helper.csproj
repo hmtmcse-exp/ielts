@@ -184,6 +184,12 @@
     <Content Include="Resources\Reading\HTML\9_paper_recycling.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\images\2_visual_symbols_and_the_blind_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\images\2_visual_symbols_and_the_blind_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
