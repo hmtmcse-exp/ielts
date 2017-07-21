@@ -249,7 +249,7 @@ namespace IELTS_Helper.Service
                 try
                 {
                 SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
-                SQLiteDataReader reader = sqLiteSQLQueryHelper.ExecuteComplexSelect("*", "FROM word_note LEFT JOIN word ON word_note.word_id = word.id WHERE note_id = " + noteId + " ORDER BY word.en asc");
+                SQLiteDataReader reader = sqLiteSQLQueryHelper.ExecuteComplexSelect("*", "FROM word_note LEFT JOIN word ON word_note.word_id = word.id WHERE note_id = " + noteId);
 
                 WordModel wordModel;
                     int numberOfWord = 1;

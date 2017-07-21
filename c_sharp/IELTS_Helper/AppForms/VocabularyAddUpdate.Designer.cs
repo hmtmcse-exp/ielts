@@ -101,6 +101,7 @@
             // StatusTB
             // 
             this.StatusTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StatusTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.StatusTB.Location = new System.Drawing.Point(3, 16);
             this.StatusTB.Multiline = true;
             this.StatusTB.Name = "StatusTB";
@@ -121,6 +122,7 @@
             // EnglishPastParticipleTB
             // 
             this.EnglishPastParticipleTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnglishPastParticipleTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnglishPastParticipleTB.Location = new System.Drawing.Point(3, 16);
             this.EnglishPastParticipleTB.Multiline = true;
             this.EnglishPastParticipleTB.Name = "EnglishPastParticipleTB";
@@ -141,6 +143,7 @@
             // EnglishPluralsTB
             // 
             this.EnglishPluralsTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnglishPluralsTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnglishPluralsTB.Location = new System.Drawing.Point(3, 16);
             this.EnglishPluralsTB.Multiline = true;
             this.EnglishPluralsTB.Name = "EnglishPluralsTB";
@@ -161,6 +164,7 @@
             // EnglishPastTenseTB
             // 
             this.EnglishPastTenseTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnglishPastTenseTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnglishPastTenseTB.Location = new System.Drawing.Point(3, 16);
             this.EnglishPastTenseTB.Multiline = true;
             this.EnglishPastTenseTB.Name = "EnglishPastTenseTB";
@@ -181,6 +185,7 @@
             // PartsOfSpeechTB
             // 
             this.PartsOfSpeechTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PartsOfSpeechTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PartsOfSpeechTB.Location = new System.Drawing.Point(3, 16);
             this.PartsOfSpeechTB.Multiline = true;
             this.PartsOfSpeechTB.Name = "PartsOfSpeechTB";
@@ -201,6 +206,7 @@
             // BanglaMeaningTB
             // 
             this.BanglaMeaningTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BanglaMeaningTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BanglaMeaningTB.Location = new System.Drawing.Point(3, 16);
             this.BanglaMeaningTB.Multiline = true;
             this.BanglaMeaningTB.Name = "BanglaMeaningTB";
@@ -221,6 +227,7 @@
             // SynonymTB
             // 
             this.SynonymTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SynonymTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SynonymTB.Location = new System.Drawing.Point(3, 16);
             this.SynonymTB.Multiline = true;
             this.SynonymTB.Name = "SynonymTB";
@@ -242,6 +249,7 @@
             // EnglishWordTB
             // 
             this.EnglishWordTB.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.EnglishWordTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EnglishWordTB.Location = new System.Drawing.Point(3, 16);
             this.EnglishWordTB.Multiline = true;
             this.EnglishWordTB.Name = "EnglishWordTB";
