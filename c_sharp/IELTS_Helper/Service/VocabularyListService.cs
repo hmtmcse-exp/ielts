@@ -1,4 +1,5 @@
-﻿using IELTS_Helper.ViewModel;
+﻿using IELTS_Helper.AppForms;
+using IELTS_Helper.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -130,6 +131,12 @@ namespace IELTS_Helper.Service
             if (tempWordModel != null)
             {
                 textToSound.PlayAsync(tempWordModel.EnglishWord);
+            }
+
+            if (true)
+            {
+                VocabularyAddUpdate vocabularyAddUpdate = new VocabularyAddUpdate();
+                vocabularyAddUpdate.ShowDialog(vlod.Form);
             }
         }
 

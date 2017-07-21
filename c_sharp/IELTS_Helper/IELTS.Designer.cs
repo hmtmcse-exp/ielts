@@ -85,6 +85,7 @@
             this.startLine = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SpellingTest = new System.Windows.Forms.TabPage();
             this.introduction.SuspendLayout();
             this.intro.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -124,6 +125,7 @@
             this.introduction.Controls.Add(this.listening);
             this.introduction.Controls.Add(this.speaking);
             this.introduction.Controls.Add(this.vocabulary);
+            this.introduction.Controls.Add(this.SpellingTest);
             this.introduction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.introduction.Location = new System.Drawing.Point(0, 0);
             this.introduction.Name = "introduction";
@@ -790,6 +792,16 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 12;
             // 
+            // SpellingTest
+            // 
+            this.SpellingTest.Location = new System.Drawing.Point(4, 22);
+            this.SpellingTest.Name = "SpellingTest";
+            this.SpellingTest.Padding = new System.Windows.Forms.Padding(3);
+            this.SpellingTest.Size = new System.Drawing.Size(1343, 569);
+            this.SpellingTest.TabIndex = 6;
+            this.SpellingTest.Text = "Spelling Test";
+            this.SpellingTest.UseVisualStyleBackColor = true;
+            // 
             // IELTS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -897,5 +909,6 @@
         private System.Windows.Forms.Button playAll;
         private System.Windows.Forms.Button reload;
         private System.Windows.Forms.WebBrowser readingQuestionPanel;
+        private System.Windows.Forms.TabPage SpellingTest;
     }
 }

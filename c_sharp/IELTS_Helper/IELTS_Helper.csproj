@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForms\VocabularyAddUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForms\VocabularyAddUpdate.Designer.cs">
+      <DependentUpon>VocabularyAddUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\SQLiteConnectionManager.cs" />
     <Compile Include="Database\SQLiteSQLQueryHelper.cs" />
     <Compile Include="Data\SpeakWordData.cs" />
@@ -86,6 +92,9 @@
     <Compile Include="ViewModel\PlayWordSettings.cs" />
     <Compile Include="ViewModel\VocabularyListOrganizerData.cs" />
     <Compile Include="ViewModel\WordModel.cs" />
+    <EmbeddedResource Include="AppForms\VocabularyAddUpdate.resx">
+      <DependentUpon>VocabularyAddUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IELTS.resx">
       <DependentUpon>IELTS.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,7 +163,13 @@
     <Content Include="Resources\Reading\HTML\10_absenteeism_in_nursing_a_longitudinal_study.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\10_absenteeism_in_nursing_a_longitudinal_study_question.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Reading\HTML\1_population_viability_analysis.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\1_population_viability_analysis_question.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Reading\HTML\2_visual_symbols_and_the_blind.html">
@@ -166,28 +181,61 @@
     <Content Include="Resources\Reading\HTML\3_zoo_conservation_programmes.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\3_zoo_conservation_programmes_question.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Reading\HTML\4_a_workaholic_economy.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\4_a_workaholic_economy_question.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Reading\HTML\5_the_risks_of_cigarette_smoke.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\5_the_risks_of_cigarette_smoke_question.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Reading\HTML\6_a_remarkable_beetle.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\6_a_remarkable_beetle_question.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Reading\HTML\7_alarming_rate_of_loss_of_tropical_rainforests.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\7_alarming_rate_of_loss_of_tropical_rainforests_question.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Reading\HTML\8_changing_our_understanding_of_health.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\Reading\HTML\8_changing_our_understanding_of_health_question.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Reading\HTML\9_paper_recycling.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\9_paper_recycling_question.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Reading\HTML\images\2_visual_symbols_and_the_blind_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Reading\HTML\images\2_visual_symbols_and_the_blind_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\images\6_a_remarkable_beetle_question_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\images\6_a_remarkable_beetle_question_2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\images\7_alarming_rate_of_loss_of_tropical_rainforests_1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Reading\HTML\images\9_paper_recycling_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
