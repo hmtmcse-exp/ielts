@@ -89,6 +89,8 @@ public class TextFileReaderWriter {
         findReplace = findReplace.replaceAll("–","-");
         findReplace = findReplace.replaceAll("…",".");
         findReplace = findReplace.replaceAll("‘","");
+        findReplace = findReplace.replaceAll("“","\"");
+        findReplace = findReplace.replaceAll("”","\"");
         return findReplace;
     }
 
