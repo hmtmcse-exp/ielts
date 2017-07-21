@@ -60,7 +60,7 @@
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.readingSearch = new System.Windows.Forms.TextBox();
             this.playAll = new System.Windows.Forms.Button();
-            this.reload = new System.Windows.Forms.Button();
+            this.reloadReadingVocabulary = new System.Windows.Forms.Button();
             this.writing = new System.Windows.Forms.TabPage();
             this.listening = new System.Windows.Forms.TabPage();
             this.speaking = new System.Windows.Forms.TabPage();
@@ -469,7 +469,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel9.Controls.Add(this.readingSearch, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.playAll, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.reload, 2, 0);
+            this.tableLayoutPanel9.Controls.Add(this.reloadReadingVocabulary, 2, 0);
             this.tableLayoutPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel9.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -499,15 +499,16 @@
             this.playAll.UseVisualStyleBackColor = true;
             this.playAll.Click += new System.EventHandler(this.playAll_Click);
             // 
-            // reload
+            // reloadReadingVocabulary
             // 
-            this.reload.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reload.Location = new System.Drawing.Point(181, 3);
-            this.reload.Name = "reload";
-            this.reload.Size = new System.Drawing.Size(54, 28);
-            this.reload.TabIndex = 2;
-            this.reload.Text = "Reload";
-            this.reload.UseVisualStyleBackColor = true;
+            this.reloadReadingVocabulary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reloadReadingVocabulary.Location = new System.Drawing.Point(181, 3);
+            this.reloadReadingVocabulary.Name = "reloadReadingVocabulary";
+            this.reloadReadingVocabulary.Size = new System.Drawing.Size(54, 28);
+            this.reloadReadingVocabulary.TabIndex = 2;
+            this.reloadReadingVocabulary.Text = "Reload";
+            this.reloadReadingVocabulary.UseVisualStyleBackColor = true;
+            this.reloadReadingVocabulary.Click += new System.EventHandler(this.reloadReadingVocabulary_Click);
             // 
             // writing
             // 
@@ -907,7 +908,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TextBox readingSearch;
         private System.Windows.Forms.Button playAll;
-        private System.Windows.Forms.Button reload;
+        private System.Windows.Forms.Button reloadReadingVocabulary;
         private System.Windows.Forms.WebBrowser readingQuestionPanel;
         private System.Windows.Forms.TabPage SpellingTest;
     }

@@ -66,11 +66,24 @@ namespace IELTS_Helper.Service
                         vlod.PlayAllButton.Click -= this.PlayAllButtonClick;
                         vlod.PlayAllButton.Click += this.PlayAllButtonClick;
                     }
+
+                    if(vlod.ReloadButton != null && vlod.ReloadAllData != null)
+                    {
+                        vlod.ReloadButton.Click -= ReloadButtonClick;
+                        vlod.ReloadButton.Click += ReloadButtonClick;
+                    }
                 }
             }
 
         }
 
+        private void ReloadButtonClick(object sender, EventArgs e)
+        {
+            if (vlod.ReloadAllData != null)
+            {
+                vlod.ReloadAllData.Invoke(vlod);
+            }
+        }
 
         private void SearchTextBoxChanged(object sender, EventArgs e)
         {

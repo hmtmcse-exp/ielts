@@ -124,7 +124,9 @@ namespace IELTS_Helper
             ReadingVocabularyListviewData.Form = this;
             ReadingVocabularyListviewData.PlayAllButton = playAll;
             ReadingVocabularyListviewData.PlayWordLastIndex = 0;
-            vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData, noteModel.Id + "");
+            ReadingVocabularyListviewData.ReloadButton = reloadReadingVocabulary;
+            ReadingVocabularyListviewData.OptionalStringrOne = noteModel.Id + "";
+            vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData);
 
         }
 
@@ -298,6 +300,11 @@ namespace IELTS_Helper
             playReadingContent.words = readingWebview.Document.Body.InnerText;
             playReadingContent.ButtonInstance = ReadContents;
             vocabularyService.SpeakWord(playReadingContent);
+
+        }
+
+        private void reloadReadingVocabulary_Click(object sender, EventArgs e)
+        {
 
         }
     }

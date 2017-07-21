@@ -47,7 +47,8 @@
             this.EnglishWordTB = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.SaveVocabulary = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.RestToLoadVocabulary = new System.Windows.Forms.Button();
+            this.DeleteVocabulary = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -249,16 +250,18 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.SaveVocabulary, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.RestToLoadVocabulary, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.DeleteVocabulary, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(490, 447);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(482, 32);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
@@ -267,21 +270,31 @@
             this.SaveVocabulary.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SaveVocabulary.Location = new System.Drawing.Point(3, 3);
             this.SaveVocabulary.Name = "SaveVocabulary";
-            this.SaveVocabulary.Size = new System.Drawing.Size(235, 26);
+            this.SaveVocabulary.Size = new System.Drawing.Size(154, 26);
             this.SaveVocabulary.TabIndex = 0;
             this.SaveVocabulary.Text = "Save";
             this.SaveVocabulary.UseVisualStyleBackColor = true;
             this.SaveVocabulary.Click += new System.EventHandler(this.SaveVocabulary_Click);
             // 
-            // button2
+            // RestToLoadVocabulary
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Location = new System.Drawing.Point(244, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(235, 26);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
+            this.RestToLoadVocabulary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RestToLoadVocabulary.Location = new System.Drawing.Point(163, 3);
+            this.RestToLoadVocabulary.Name = "RestToLoadVocabulary";
+            this.RestToLoadVocabulary.Size = new System.Drawing.Size(154, 26);
+            this.RestToLoadVocabulary.TabIndex = 1;
+            this.RestToLoadVocabulary.Text = "Reset";
+            this.RestToLoadVocabulary.UseVisualStyleBackColor = true;
+            // 
+            // DeleteVocabulary
+            // 
+            this.DeleteVocabulary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeleteVocabulary.Location = new System.Drawing.Point(323, 3);
+            this.DeleteVocabulary.Name = "DeleteVocabulary";
+            this.DeleteVocabulary.Size = new System.Drawing.Size(156, 26);
+            this.DeleteVocabulary.TabIndex = 2;
+            this.DeleteVocabulary.Text = "Delete";
+            this.DeleteVocabulary.UseVisualStyleBackColor = true;
             // 
             // VocabularyAddUpdate
             // 
@@ -335,6 +348,7 @@
         private System.Windows.Forms.TextBox EnglishWordTB;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button SaveVocabulary;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button RestToLoadVocabulary;
+        private System.Windows.Forms.Button DeleteVocabulary;
     }
 }

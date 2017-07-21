@@ -200,13 +200,14 @@ namespace IELTS_Helper.Service
             }
         }
 
-        public void LoadReadingListViewVocabulary(VocabularyListOrganizerData vlod, String noteId)
+        public void LoadReadingListViewVocabulary(VocabularyListOrganizerData vlod)
         {
             vlod.Header = new string[3] { "SL", "English", "Bangla" };
-            LoadByNoteIdFromDatabase(noteId, AppConstant.READING, false);
-            string modelKey = GetModelKey(noteId, AppConstant.READING);
+            LoadByNoteIdFromDatabase(vlod.OptionalStringrOne, AppConstant.READING, false);
+            string modelKey = GetModelKey(vlod.OptionalStringrOne, AppConstant.READING);
             vlod.ListViewItemList = listViewItemMap[modelKey];
             vlod.WordModelList = wordMap[modelKey];
+            vlod.ReloadAllData = LoadReadingListViewVocabulary;
             ReadingVocabularyListService.Populate(vlod);
         }
 

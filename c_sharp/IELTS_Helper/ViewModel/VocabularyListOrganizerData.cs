@@ -9,6 +9,7 @@ namespace IELTS_Helper.ViewModel
 {
     public class VocabularyListOrganizerData
     {
+        public delegate void ReloadAll(VocabularyListOrganizerData vlod);
         public List<WordModel> WordModelList { get; set; } = null;
         public List<ListViewItem> ListViewItemList { get; set; } = null;
         public TextBox EnglishWordText { get; set; } = null;
@@ -24,6 +25,11 @@ namespace IELTS_Helper.ViewModel
         public Form Form { get; set; } = null;
         public string PlayButtonStartText { get; set; } = "Play All";
         public string PlayButtonStoptText { get; set; } = "Stop Play";
+        public ReloadAll ReloadAllData { get; set; } = null;
+        public int OptionalIntegerOne { get; set; } = -1;
+        public string OptionalStringrOne { get; set; } = null;
+
+
 
     }
 }
