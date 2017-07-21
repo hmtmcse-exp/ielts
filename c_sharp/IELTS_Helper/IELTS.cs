@@ -125,9 +125,8 @@ namespace IELTS_Helper
             ReadingVocabularyListviewData.PlayAllButton = playAll;
             ReadingVocabularyListviewData.PlayWordLastIndex = 0;
             ReadingVocabularyListviewData.ReloadButton = reloadReadingVocabulary;
-            ReadingVocabularyListviewData.OptionalStringrOne = noteModel.Id + "";
+            ReadingVocabularyListviewData.NoteId = noteModel.Id + "";
             vocabularyService.LoadReadingListViewVocabulary(ReadingVocabularyListviewData);
-
         }
 
         private void readingWebview_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)

@@ -164,6 +164,19 @@ namespace IELTS_Helper.Service
             sqLiteSQLQueryHelper.Update(AppConstant.WORD_TABLE, fieldsMapping, " WHERE id =" + id);
         }
 
+        public static void DeleteDatabaseVacabulary(string id)
+        {
+            SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
+            sqLiteSQLQueryHelper.Delete(AppConstant.WORD_TABLE, "WHERE id =" + id);
+        }
+
+        public static void DeleteWordAndMappingFromDatabaseVacabulary(string wordId, string noteId)
+        {
+            SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
+            sqLiteSQLQueryHelper.Delete(AppConstant.WORD_NOTE_TABLE, "WHERE word_id =" + wordId + " AND note_id =" +noteId);
+            sqLiteSQLQueryHelper.Delete(AppConstant.WORD_TABLE, "WHERE id =" + wordId);
+        }
+
         private void loadFromDatabase(Boolean isReload)
         {
             if (isReload == false || words.Count() == 0)
@@ -203,8 +216,8 @@ namespace IELTS_Helper.Service
         public void LoadReadingListViewVocabulary(VocabularyListOrganizerData vlod)
         {
             vlod.Header = new string[3] { "SL", "English", "Bangla" };
-            LoadByNoteIdFromDatabase(vlod.OptionalStringrOne, AppConstant.READING, false);
-            string modelKey = GetModelKey(vlod.OptionalStringrOne, AppConstant.READING);
+            LoadByNoteIdFromDatabase(vlod.NoteId, AppConstant.READING, false);
+            string modelKey = GetModelKey(vlod.NoteId, AppConstant.READING);
             vlod.ListViewItemList = listViewItemMap[modelKey];
             vlod.WordModelList = wordMap[modelKey];
             vlod.ReloadAllData = LoadReadingListViewVocabulary;

@@ -15,11 +15,13 @@ namespace IELTS_Helper.AppForms
     public partial class VocabularyAddUpdate : Form
     {
         private WordModel wordModel = null;
+        private string noteId = null;
 
         public VocabularyAddUpdate()
         {
             InitializeComponent();
             wordModel = VocabularyListService.NextFormWordModel;
+            noteId = VocabularyListService.NoteId;
             OnLoadForm();
             
         }
@@ -58,6 +60,24 @@ namespace IELTS_Helper.AppForms
             setFields += "status ='" + StatusTB.Text + "'";
             VocabularyService.UpdateDatabaseVacabulary(wordModel.Id, setFields);
             MessageBox.Show("Data Saved","Info");
+        }
+
+        private void DeleteVocabulary_Click(object sender, EventArgs e)
+        {
+            var confirmResult = MessageBox.Show("Are you sure to delete this item " + EnglishWordTB.Text +" ?? ","Confirm Delete!!",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                if(noteId != null)
+                {
+                    VocabularyService.DeleteWordAndMappingFromDatabaseVacabulary(wordModel.Id, noteId);
+                }
+                else
+                {
+                    VocabularyService.DeleteDatabaseVacabulary(wordModel.Id);
+                }               
+                this.Close();
+            }
         }
     }
 }

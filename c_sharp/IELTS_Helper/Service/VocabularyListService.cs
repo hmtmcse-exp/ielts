@@ -18,6 +18,7 @@ namespace IELTS_Helper.Service
         private Thread thread = null;
         private bool isPlayLoopOn = false;
         public static WordModel NextFormWordModel = null;
+        public static string NoteId = null;
 
         public void Populate(VocabularyListOrganizerData vlod)
         {
@@ -101,7 +102,11 @@ namespace IELTS_Helper.Service
                 tempWordModel = vlod.WordModelList[e.ItemIndex];
                 this.UpdateUI(tempWordModel);
             }
-            
+
+            if (vlod.NoteId != null)
+            {
+                NoteId = vlod.NoteId;
+            }
         }
 
         private void UpdateUI(WordModel wordModel)

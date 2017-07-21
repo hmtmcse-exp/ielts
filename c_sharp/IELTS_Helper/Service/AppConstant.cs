@@ -10,5 +10,6 @@ namespace IELTS_Helper.Service
     {
         public readonly static string READING = "READING";
         public readonly static string WORD_TABLE = "word";
+        public readonly static string WORD_NOTE_TABLE = "word_note";
     }
 }

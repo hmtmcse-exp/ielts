@@ -28,8 +28,6 @@ namespace IELTS_Helper.ViewModel
         public ReloadAll ReloadAllData { get; set; } = null;
         public int OptionalIntegerOne { get; set; } = -1;
         public string OptionalStringrOne { get; set; } = null;
-
-
-
+        public string NoteId { get; set; } = null;
     }
 }

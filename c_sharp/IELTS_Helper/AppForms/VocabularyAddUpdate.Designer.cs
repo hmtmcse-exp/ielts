@@ -295,6 +295,7 @@
             this.DeleteVocabulary.TabIndex = 2;
             this.DeleteVocabulary.Text = "Delete";
             this.DeleteVocabulary.UseVisualStyleBackColor = true;
+            this.DeleteVocabulary.Click += new System.EventHandler(this.DeleteVocabulary_Click);
             // 
             // VocabularyAddUpdate
             // 
