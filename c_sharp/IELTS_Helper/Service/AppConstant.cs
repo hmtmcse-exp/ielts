@@ -9,5 +9,6 @@ namespace IELTS_Helper.Service
     public static class AppConstant
     {
         public readonly static string READING = "READING";
+        public readonly static string WORD_TABLE = "word";
     }
 }

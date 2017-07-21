@@ -13,5 +13,9 @@ namespace IELTS_Helper.ViewModel
         public string PartsOfSpeech { get; set; }
         public string Synonym { get; set; }
         public string Id { get; set; }
+        public string EnglishPastTense { get; set; }
+        public string EnglishPastParticiple { get; set; }
+        public string Status { get; set; }
+        public string EnglishPlurals { get; set; }
     }
 }

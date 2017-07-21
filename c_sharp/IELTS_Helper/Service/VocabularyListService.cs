@@ -17,6 +17,7 @@ namespace IELTS_Helper.Service
         public TextToSoundService textToSound = new TextToSoundService();
         private Thread thread = null;
         private bool isPlayLoopOn = false;
+        public static WordModel NextFormWordModel = null;
 
         public void Populate(VocabularyListOrganizerData vlod)
         {
@@ -133,8 +134,9 @@ namespace IELTS_Helper.Service
                 textToSound.PlayAsync(tempWordModel.EnglishWord);
             }
 
-            if (true)
+            if (tempWordModel != null && true)
             {
+                NextFormWordModel = tempWordModel;
                 VocabularyAddUpdate vocabularyAddUpdate = new VocabularyAddUpdate();
                 vocabularyAddUpdate.ShowDialog(vlod.Form);
             }

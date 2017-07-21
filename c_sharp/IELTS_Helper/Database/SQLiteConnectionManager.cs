@@ -11,7 +11,7 @@ namespace IELTS_Helper.Database
     {
         public SQLiteConnection sqLiteConnection;
         public SQLiteCommand sqLiteCommand;
-        public static string DB_NAME = "Resources/Database/word_book.db";
+        public static string DB_NAME = "../../Resources/Database/word_book.db";
         public readonly string DB_CONNECTION = "Data Source=" + DB_NAME + ";Version=3; FailIfMissing=True; Foreign Keys=True;";
 
 

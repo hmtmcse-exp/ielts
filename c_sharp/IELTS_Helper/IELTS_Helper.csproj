@@ -117,9 +117,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\Database\word_book.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Resources\Database\word_book.db" />
     <None Include="Resources\Listening\HTML\Reading.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -158,6 +158,12 @@ namespace IELTS_Helper.Service
 
         }
 
+        public static void UpdateDatabaseVacabulary(string id, string fieldsMapping)
+        {
+            SQLiteSQLQueryHelper sqLiteSQLQueryHelper = new SQLiteSQLQueryHelper();
+            sqLiteSQLQueryHelper.Update(AppConstant.WORD_TABLE, fieldsMapping, " WHERE id =" + id);
+        }
+
         private void loadFromDatabase(Boolean isReload)
         {
             if (isReload == false || words.Count() == 0)
@@ -179,6 +185,7 @@ namespace IELTS_Helper.Service
                         wordModel.BanglaMeaning = listViewItemArray[2] = reader["bd"].ToString();
                         wordModel.PartsOfSpeech = listViewItemArray[3] = reader["en_ps"].ToString();
                         wordModel.Synonym = reader["en_synonym"].ToString();
+                        wordModel.Status = reader["status"].ToString();
                         words.Add(wordModel);
                         listViewItemArray[0] = numberOfWord + "";
                         listViewItemList.Add(new ListViewItem(listViewItemArray));
@@ -240,6 +247,7 @@ namespace IELTS_Helper.Service
                         wordModel.BanglaMeaning = reader["bd"].ToString();
                         wordModel.PartsOfSpeech = reader["en_ps"].ToString();
                         wordModel.Synonym =  reader["en_synonym"].ToString();
+                        wordModel.Status = reader["status"].ToString();
                         wordMap[modelKey].Add(wordModel);
                         ReadingListViewWordMeaning(numberOfWord, modelKey, reader);
                        numberOfWord++;
